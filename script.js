@@ -1,5 +1,6 @@
 // ========================================
-// PurpleKnightASA Website
+// PURPLEKNIGHTASA WEBSITE
+// script.js
 // ========================================
 
 
@@ -7,14 +8,10 @@
 // CURRENT YEAR
 // ========================================
 
-const currentYear =
-    document.getElementById("currentYear");
+const currentYear = document.getElementById("currentYear");
 
 if (currentYear) {
-
-    currentYear.textContent =
-        new Date().getFullYear();
-
+    currentYear.textContent = new Date().getFullYear();
 }
 
 
@@ -22,237 +19,248 @@ if (currentYear) {
 // NAVBAR SCROLL EFFECT
 // ========================================
 
-const header =
-    document.querySelector(".header");
+const header = document.querySelector(".header");
 
-window.addEventListener(
-    "scroll",
-    () => {
+function updateHeader() {
 
-        if (window.scrollY > 30) {
-
-            header.style.background =
-                "rgba(8, 8, 13, 0.96)";
-
-            header.style.boxShadow =
-                "0 10px 35px rgba(0, 0, 0, 0.28)";
-
-        } else {
-
-            header.style.background =
-                "rgba(8, 8, 13, 0.84)";
-
-            header.style.boxShadow =
-                "none";
-
-        }
-
+    if (!header) {
+        return;
     }
+
+    if (window.scrollY > 40) {
+
+        header.style.background =
+            "rgba(8, 8, 13, 0.97)";
+
+        header.style.boxShadow =
+            "0 10px 30px rgba(0, 0, 0, 0.30)";
+
+    } else {
+
+        header.style.background =
+            "rgba(8, 8, 13, 0.88)";
+
+        header.style.boxShadow =
+            "none";
+    }
+}
+
+window.addEventListener("scroll", updateHeader);
+window.addEventListener("load", updateHeader);
+
+
+// ========================================
+// ACTIVE NAVIGATION
+// ========================================
+
+const sections = document.querySelectorAll(
+    "section[id]"
+);
+
+const navLinks = document.querySelectorAll(
+    ".nav-links a"
 );
 
 
-// ========================================
-// ACTIVE NAVIGATION LINK
-// ========================================
+function updateNavigation() {
 
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
-const navLinks =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
+    let currentSection = "home";
 
 
-function updateActiveNavigation() {
+    sections.forEach((section) => {
 
-    let currentSection =
-        "home";
+        const sectionTop =
+            section.offsetTop - 160;
 
-
-    sections.forEach(
-        (section) => {
-
-            const top =
-                section.offsetTop - 160;
-
-            const height =
-                section.offsetHeight;
+        const sectionHeight =
+            section.offsetHeight;
 
 
-            if (
-                window.scrollY >= top &&
-                window.scrollY <
-                top + height
-            ) {
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
 
-                currentSection =
-                    section.id;
-
-            }
-
+            currentSection = section.id;
         }
-    );
+
+    });
 
 
-    navLinks.forEach(
-        (link) => {
+    navLinks.forEach((link) => {
 
-            link.classList.remove(
-                "active"
-            );
+        link.classList.remove("active");
 
 
-            if (
-                link.getAttribute("href") ===
-                `#${currentSection}`
-            ) {
+        if (
+            link.getAttribute("href") ===
+            "#" + currentSection
+        ) {
 
-                link.classList.add(
-                    "active"
-                );
-
-            }
-
+            link.classList.add("active");
         }
-    );
+
+    });
 
 }
 
-
 window.addEventListener(
     "scroll",
-    updateActiveNavigation
+    updateNavigation
 );
 
 window.addEventListener(
     "load",
-    updateActiveNavigation
+    updateNavigation
 );
 
 
 // ========================================
-// SMOOTH INTERNAL LINKS
+// SMOOTH SCROLLING
 // ========================================
 
-const internalLinks =
-    document.querySelectorAll(
-        'a[href^="#"]'
-    );
+const internalLinks = document.querySelectorAll(
+    'a[href^="#"]'
+);
 
 
-internalLinks.forEach(
-    (link) => {
+internalLinks.forEach((link) => {
 
-        link.addEventListener(
-            "click",
-            (event) => {
+    link.addEventListener(
+        "click",
+        (event) => {
 
-                const target =
-                    link.getAttribute(
-                        "href"
-                    );
+            const targetID =
+                link.getAttribute("href");
 
 
-                if (
-                    !target ||
-                    target === "#"
-                ) {
-                    return;
-                }
+            if (
+                !targetID ||
+                targetID === "#"
+            ) {
+                return;
+            }
 
 
-                const section =
-                    document.querySelector(
-                        target
-                    );
+            const targetSection =
+                document.querySelector(targetID);
 
 
-                if (section) {
+            if (targetSection) {
 
-                    event.preventDefault();
+                event.preventDefault();
 
-                    section.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
 
-                }
+                targetSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
 
             }
-        );
 
-    }
-);
+        }
+    );
+
+});
 
 
 // ========================================
 // COPY DISCORD USERNAME
 // ========================================
 
-const copyDiscord =
-    document.getElementById(
-        "copyDiscord"
-    );
+const copyDiscordButton =
+    document.getElementById("copyDiscord");
 
 const copyMessage =
-    document.getElementById(
-        "copyMessage"
-    );
+    document.getElementById("copyMessage");
+
+const discordUsername =
+    "purpleknightasa";
 
 
-if (copyDiscord) {
+if (copyDiscordButton) {
 
-    copyDiscord.addEventListener(
+    copyDiscordButton.addEventListener(
         "click",
         async () => {
 
-            const username =
-                "purpleknightasa";
-
-
             try {
 
-                await navigator.clipboard
-                    .writeText(username);
+                await navigator.clipboard.writeText(
+                    discordUsername
+                );
 
 
-                copyDiscord.textContent =
+                copyDiscordButton.textContent =
                     "Copied!";
 
 
                 if (copyMessage) {
-
                     copyMessage.style.display =
                         "block";
-
                 }
 
 
-                setTimeout(
-                    () => {
+                setTimeout(() => {
 
-                        copyDiscord.textContent =
-                            "Copy Username";
+                    copyDiscordButton.textContent =
+                        "Copy Discord Username";
 
 
-                        if (copyMessage) {
+                    if (copyMessage) {
+                        copyMessage.style.display =
+                            "none";
+                    }
 
-                            copyMessage.style.display =
-                                "none";
+                }, 2000);
 
-                        }
-
-                    },
-                    2000
-                );
 
             } catch (error) {
 
-                copyDiscord.textContent =
-                    username;
+                /*
+                Fallback for browsers where
+                navigator.clipboard doesn't work.
+                */
+
+                const textArea =
+                    document.createElement("textarea");
+
+                textArea.value =
+                    discordUsername;
+
+                document.body.appendChild(
+                    textArea
+                );
+
+                textArea.select();
+
+                document.execCommand("copy");
+
+                textArea.remove();
+
+
+                copyDiscordButton.textContent =
+                    "Copied!";
+
+
+                if (copyMessage) {
+                    copyMessage.style.display =
+                        "block";
+                }
+
+
+                setTimeout(() => {
+
+                    copyDiscordButton.textContent =
+                        "Copy Discord Username";
+
+
+                    if (copyMessage) {
+                        copyMessage.style.display =
+                            "none";
+                    }
+
+                }, 2000);
 
             }
 
@@ -263,38 +271,29 @@ if (copyDiscord) {
 
 
 // ========================================
-// REVEAL ANIMATIONS
+// SCROLL REVEAL ANIMATIONS
 // ========================================
 
-const revealItems =
-    document.querySelectorAll(
-        `
-        .about-card,
-        .info-card,
-        .project-card,
-        .social-card,
-        .contact-box
-        `
-    );
-
-
-revealItems.forEach(
-    (item) => {
-
-        item.style.opacity =
-            "0";
-
-        item.style.transform =
-            "translateY(30px)";
-
-        item.style.transition =
-            `
-            opacity 0.65s ease,
-            transform 0.65s ease
-            `;
-
-    }
+const revealItems = document.querySelectorAll(
+    `
+    .about-card,
+    .project-card,
+    .contact-box
+    `
 );
+
+
+revealItems.forEach((item) => {
+
+    item.style.opacity = "0";
+
+    item.style.transform =
+        "translateY(30px)";
+
+    item.style.transition =
+        "opacity 0.65s ease, transform 0.65s ease";
+
+});
 
 
 const revealObserver =
@@ -302,28 +301,23 @@ const revealObserver =
 
         (entries) => {
 
-            entries.forEach(
-                (entry) => {
+            entries.forEach((entry) => {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+                if (entry.isIntersecting) {
 
-                        entry.target.style.opacity =
-                            "1";
+                    entry.target.style.opacity =
+                        "1";
 
-                        entry.target.style.transform =
-                            "translateY(0)";
+                    entry.target.style.transform =
+                        "translateY(0)";
 
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
+                    revealObserver.unobserve(
+                        entry.target
+                    );
 
                 }
-            );
+
+            });
 
         },
 
@@ -334,31 +328,24 @@ const revealObserver =
     );
 
 
-revealItems.forEach(
-    (item) => {
+revealItems.forEach((item) => {
 
-        revealObserver.observe(
-            item
-        );
+    revealObserver.observe(item);
 
-    }
-);
+});
 
 
 // ========================================
-// HERO LOAD ANIMATION
+// HERO ENTRANCE ANIMATION
 // ========================================
 
 const heroContent =
-    document.querySelector(
-        ".hero-content"
-    );
+    document.querySelector(".hero-content");
 
 
 if (heroContent) {
 
-    heroContent.style.opacity =
-        "0";
+    heroContent.style.opacity = "0";
 
     heroContent.style.transform =
         "translateY(25px)";
@@ -368,26 +355,67 @@ if (heroContent) {
         "load",
         () => {
 
-            setTimeout(
-                () => {
+            setTimeout(() => {
 
-                    heroContent.style.transition =
-                        `
-                        opacity 0.8s ease,
-                        transform 0.8s ease
-                        `;
+                heroContent.style.transition =
+                    "opacity 0.8s ease, transform 0.8s ease";
 
-                    heroContent.style.opacity =
-                        "1";
+                heroContent.style.opacity =
+                    "1";
 
-                    heroContent.style.transform =
-                        "translateY(0)";
+                heroContent.style.transform =
+                    "translateY(0)";
 
-                },
-                150
-            );
+            }, 150);
 
         }
     );
 
 }
+
+
+// ========================================
+// PROJECT CARD EFFECT
+// ========================================
+
+const projectCards =
+    document.querySelectorAll(".project-card");
+
+
+projectCards.forEach((card) => {
+
+    card.addEventListener(
+        "mouseenter",
+        () => {
+
+            card.style.boxShadow =
+                "0 20px 55px rgba(139, 92, 246, 0.18)";
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseleave",
+        () => {
+
+            card.style.boxShadow = "";
+
+        }
+    );
+
+});
+
+
+// ========================================
+// WEBSITE READY
+// ========================================
+
+console.log(
+    "%cpurpleknightasa",
+    "color: #a78bfa; font-size: 20px; font-weight: bold;"
+);
+
+console.log(
+    "Website loaded successfully."
+);
