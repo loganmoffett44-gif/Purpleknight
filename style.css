@@ -11,12 +11,12 @@
 
     <meta
         name="description"
-        content="Official website of purpleknightasa. Gamer, owner, founder, web developer, creator, and Discord community builder."
+        content="Official website of purpleknightasa. Founder of Vantacrest SMP, gamer, creator, and web developer."
     >
 
     <meta
         name="theme-color"
-        content="#7c3aed"
+        content="#8b5cf6"
     >
 
     <title>purpleknightasa | Official Website</title>
@@ -30,6 +30,10 @@
 
 <body>
 
+    <!-- ========================================
+         NAVBAR
+    ========================================= -->
+
     <header class="header">
 
         <nav class="navbar">
@@ -41,6 +45,7 @@
                 purpleknight<span>asa</span>
             </a>
 
+
             <div class="nav-links">
 
                 <a href="#home">
@@ -51,8 +56,12 @@
                     About
                 </a>
 
-                <a href="#projects">
-                    Projects
+                <a href="#vantacrest">
+                    Vantacrest
+                </a>
+
+                <a href="#skills">
+                    Skills
                 </a>
 
                 <a href="#contact">
@@ -68,29 +77,62 @@
 
     <main>
 
-        <!-- HOME -->
+        <!-- ========================================
+             HOME
+        ========================================= -->
 
         <section
             id="home"
             class="hero"
         >
 
-            <div class="hero-glow"></div>
+            <div class="hero-background"></div>
+
+            <div class="floating-glow glow-one"></div>
+            <div class="floating-glow glow-two"></div>
+            <div class="floating-glow glow-three"></div>
+
 
             <div class="hero-content">
 
-                <p class="eyebrow">
+                <div class="hero-badge">
                     OFFICIAL WEBSITE
-                </p>
+                </div>
+
 
                 <h1>
-                    purpleknight<span>asa</span>
+                    Hey, I'm
+                    <span>purpleknightasa</span>
                 </h1>
 
-                <p class="hero-text">
-                    Gamer, Owner & Founder, Web Developer,
-                    Creator, and Discord community builder.
+
+                <p class="hero-description">
+                    Founder of Vantacrest SMP,
+                    gamer, community builder,
+                    creator, and web developer.
                 </p>
+
+
+                <div class="hero-tags">
+
+                    <span>
+                        Founder
+                    </span>
+
+                    <span>
+                        Gamer
+                    </span>
+
+                    <span>
+                        Web Developer
+                    </span>
+
+                    <span>
+                        Creator
+                    </span>
+
+                </div>
+
 
                 <div class="hero-buttons">
 
@@ -98,8 +140,9 @@
                         href="#about"
                         class="button primary-button"
                     >
-                        About Me
+                        Learn About Me
                     </a>
+
 
                     <a
                         href="#contact"
@@ -112,10 +155,26 @@
 
             </div>
 
+
+            <a
+                href="#about"
+                class="scroll-down"
+            >
+                <span>
+                    Explore
+                </span>
+
+                <strong>
+                    ↓
+                </strong>
+            </a>
+
         </section>
 
 
-        <!-- ABOUT -->
+        <!-- ========================================
+             ABOUT
+        ========================================= -->
 
         <section
             id="about"
@@ -124,7 +183,7 @@
 
             <div class="section-header">
 
-                <p class="eyebrow">
+                <p class="section-tag">
                     ABOUT ME
                 </p>
 
@@ -133,7 +192,9 @@
                 </h2>
 
                 <p>
-                    A little more about me and what I do.
+                    A little about me,
+                    what I do,
+                    and what I'm building.
                 </p>
 
             </div>
@@ -141,43 +202,65 @@
 
             <div class="about-layout">
 
-                <div class="about-card">
 
-                    <div class="profile-badge">
+                <div class="about-card main-about-card">
+
+                    <div class="profile-logo">
                         PK
                     </div>
+
+
+                    <div class="profile-status">
+                        <span></span>
+                        Online Creator
+                    </div>
+
 
                     <h3>
                         purpleknightasa
                     </h3>
 
+
                     <p>
                         Hey, I'm purpleknightasa.
-                        I'm 18 years old and I'm into gaming,
-                        Discord communities, web development,
-                        and creating online projects.
+                        I'm 18 years old and I spend
+                        a lot of my time gaming,
+                        building communities,
+                        learning web development,
+                        and working on online projects.
                     </p>
 
-                    <p>
-                        I enjoy building and managing communities,
-                        making websites, learning more about coding,
-                        and working on different projects.
-                    </p>
 
                     <p>
-                        I'm always trying new ideas,
-                        improving my skills,
-                        and building something new.
+                        I enjoy creating things from scratch,
+                        improving Discord communities,
+                        working on websites,
+                        learning new coding skills,
+                        and coming up with new ideas.
+                    </p>
+
+
+                    <p>
+                        I'm also the Founder of
+                        Vantacrest SMP,
+                        where I help build and manage
+                        the community and the overall
+                        server experience.
                     </p>
 
                 </div>
 
 
-                <div class="status-grid">
+                <div class="about-info-grid">
 
-                    <div class="status-card">
 
-                        <span class="status-label">
+                    <div class="info-card age-card">
+
+                        <div class="info-icon">
+                            🎂
+                        </div>
+
+                        <span>
                             AGE
                         </span>
 
@@ -185,50 +268,33 @@
                             18 Years Old
                         </strong>
 
-                        <p>
-                            Personal
-                        </p>
-
                     </div>
 
 
-                    <div class="status-card">
+                    <div class="info-card founder-card">
 
-                        <span class="status-label">
-                            COMMUNITY
+                        <div class="info-icon">
+                            👑
+                        </div>
+
+                        <span>
+                            ROLE
                         </span>
 
                         <strong>
-                            Owner & Founder
+                            Founder
                         </strong>
-
-                        <p>
-                            Discord Communities
-                        </p>
 
                     </div>
 
 
-                    <div class="status-card">
+                    <div class="info-card discord-card">
 
-                        <span class="status-label">
-                            DEVELOPMENT
-                        </span>
+                        <div class="info-icon">
+                            💬
+                        </div>
 
-                        <strong>
-                            Web Developer
-                        </strong>
-
-                        <p>
-                            HTML • CSS • JavaScript
-                        </p>
-
-                    </div>
-
-
-                    <div class="status-card">
-
-                        <span class="status-label">
+                        <span>
                             DISCORD
                         </span>
 
@@ -236,45 +302,59 @@
                             purpleknightasa
                         </strong>
 
-                        <p>
-                            Contact Me
-                        </p>
-
                     </div>
 
 
-                    <div class="status-card">
+                    <div class="info-card dev-card">
 
-                        <span class="status-label">
-                            GAMING
+                        <div class="info-icon">
+                            💻
+                        </div>
+
+                        <span>
+                            DEVELOPMENT
                         </span>
 
                         <strong>
-                            Gamer
+                            Web Developer
                         </strong>
-
-                        <p>
-                            Gaming & Communities
-                        </p>
 
                     </div>
 
 
-                    <div class="status-card">
+                    <div class="info-card gamer-card">
 
-                        <span class="status-label">
+                        <div class="info-icon">
+                            🎮
+                        </div>
+
+                        <span>
+                            INTEREST
+                        </span>
+
+                        <strong>
+                            Gaming
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-card creator-card">
+
+                        <div class="info-icon">
+                            ✨
+                        </div>
+
+                        <span>
                             CREATOR
                         </span>
 
                         <strong>
-                            Project Creator
+                            Online Projects
                         </strong>
 
-                        <p>
-                            Websites • Bots • Communities
-                        </p>
-
                     </div>
+
 
                 </div>
 
@@ -283,82 +363,155 @@
         </section>
 
 
-        <!-- PROJECTS -->
+        <!-- ========================================
+             VANTACREST SMP
+        ========================================= -->
 
         <section
-            id="projects"
-            class="section dark-section"
+            id="vantacrest"
+            class="section vantacrest-section"
         >
 
             <div class="section-header">
 
-                <p class="eyebrow">
-                    PROJECTS
+                <p class="section-tag">
+                    MY COMMUNITY
                 </p>
 
                 <h2>
-                    What I Work On
+                    Vantacrest SMP
                 </h2>
 
                 <p>
-                    Some of the things I like building
-                    and working on.
+                    One of the main communities
+                    I'm currently building.
                 </p>
 
             </div>
 
 
-            <div class="project-grid">
+            <div class="vantacrest-card">
 
-                <article class="project-card">
+                <div class="vantacrest-glow"></div>
 
-                    <div class="project-icon">
-                        🎮
+
+                <div class="vantacrest-content">
+
+                    <div class="vantacrest-badge">
+                        FOUNDER
                     </div>
 
+
                     <h3>
-                        Gaming
+                        Vantacrest SMP
                     </h3>
 
+
                     <p>
-                        Gaming, multiplayer projects,
-                        communities, servers,
-                        and online experiences.
+                        I'm the Founder of Vantacrest SMP,
+                        a Minecraft SMP community focused on
+                        creating a fun and organized experience
+                        for players.
                     </p>
 
-                    <span class="project-status">
-                        ACTIVE
-                    </span>
 
-                </article>
+                    <p>
+                        I help manage the community,
+                        work on server ideas,
+                        organize the Discord,
+                        plan features,
+                        and help shape the future
+                        of the SMP.
+                    </p>
 
 
-                <article class="project-card">
+                    <div class="vantacrest-stats">
 
-                    <div class="project-icon">
-                        🌐
+                        <div>
+
+                            <span>
+                                ROLE
+                            </span>
+
+                            <strong>
+                                Founder
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                TYPE
+                            </span>
+
+                            <strong>
+                                Minecraft SMP
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                STATUS
+                            </span>
+
+                            <strong class="online-status">
+                                Active
+                            </strong>
+
+                        </div>
+
                     </div>
 
-                    <h3>
-                        Discord Communities
-                    </h3>
-
-                    <p>
-                        Creating, owning,
-                        and managing Discord communities
-                        and online projects.
-                    </p>
-
-                    <span class="project-status">
-                        ACTIVE
-                    </span>
-
-                </article>
+                </div>
 
 
-                <article class="project-card">
+                <div class="vantacrest-symbol">
+                    V
+                </div>
 
-                    <div class="project-icon">
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             SKILLS
+        ========================================= -->
+
+        <section
+            id="skills"
+            class="section skills-section"
+        >
+
+            <div class="section-header">
+
+                <p class="section-tag">
+                    WHAT I DO
+                </p>
+
+                <h2>
+                    Skills & Interests
+                </h2>
+
+                <p>
+                    Some of the things I enjoy
+                    learning and working on.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <article class="skill-card purple-card">
+
+                    <div class="skill-icon">
                         💻
                     </div>
 
@@ -368,84 +521,197 @@
 
                     <p>
                         Building websites using
-                        HTML, CSS, JavaScript,
-                        and learning new development skills.
+                        HTML, CSS, and JavaScript
+                        while continuing to learn
+                        more about development.
                     </p>
 
-                    <span class="project-status">
-                        LEARNING
-                    </span>
+                    <div class="skill-tags">
+
+                        <span>
+                            HTML
+                        </span>
+
+                        <span>
+                            CSS
+                        </span>
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                    </div>
 
                 </article>
 
 
-                <article class="project-card">
+                <article class="skill-card blue-card">
 
-                    <div class="project-icon">
-                        🤖
+                    <div class="skill-icon">
+                        💬
                     </div>
 
                     <h3>
-                        Discord Bots
+                        Discord Communities
                     </h3>
 
                     <p>
-                        Working with Discord bots,
-                        commands, systems,
-                        and community tools.
+                        Building, organizing,
+                        and managing Discord communities,
+                        roles, channels, systems,
+                        and community projects.
                     </p>
 
-                    <span class="project-status">
-                        IN DEVELOPMENT
-                    </span>
+                    <div class="skill-tags">
+
+                        <span>
+                            Discord
+                        </span>
+
+                        <span>
+                            Community
+                        </span>
+
+                        <span>
+                            Management
+                        </span>
+
+                    </div>
 
                 </article>
+
+
+                <article class="skill-card pink-card">
+
+                    <div class="skill-icon">
+                        🎮
+                    </div>
+
+                    <h3>
+                        Gaming
+                    </h3>
+
+                    <p>
+                        Gaming is one of my main interests
+                        and a big part of the communities
+                        and projects I enjoy building.
+                    </p>
+
+                    <div class="skill-tags">
+
+                        <span>
+                            Minecraft
+                        </span>
+
+                        <span>
+                            Multiplayer
+                        </span>
+
+                        <span>
+                            Communities
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="skill-card orange-card">
+
+                    <div class="skill-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>
+                        Projects
+                    </h3>
+
+                    <p>
+                        I enjoy experimenting with
+                        websites, Discord bots,
+                        gaming projects,
+                        and new ideas.
+                    </p>
+
+                    <div class="skill-tags">
+
+                        <span>
+                            Websites
+                        </span>
+
+                        <span>
+                            Bots
+                        </span>
+
+                        <span>
+                            Ideas
+                        </span>
+
+                    </div>
+
+                </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- CONTACT -->
+        <!-- ========================================
+             CONTACT
+        ========================================= -->
 
         <section
             id="contact"
             class="contact-section"
         >
 
+            <div class="contact-glow"></div>
+
+
             <div class="contact-box">
 
-                <p class="eyebrow">
+                <div class="contact-icon">
+                    💬
+                </div>
+
+
+                <p class="section-tag">
                     CONTACT ME
                 </p>
 
+
                 <h2>
-                    Get In Touch
+                    Want to reach me?
                 </h2>
 
-                <p class="contact-text">
-                    The best way to contact me is through Discord.
-                    Feel free to reach out about gaming,
-                    communities, websites, development,
-                    projects, or anything else.
+
+                <p class="contact-description">
+                    The best way to contact me
+                    is through Discord.
+                    Feel free to reach out
+                    about Vantacrest SMP,
+                    websites, gaming,
+                    communities, or projects.
                 </p>
 
 
-                <div class="discord-box">
+                <div class="discord-contact">
 
                     <span>
-                        MY DISCORD USERNAME
+                        DISCORD USERNAME
                     </span>
 
                     <strong>
                         purpleknightasa
                     </strong>
 
+
                     <button
                         id="copyDiscord"
                         type="button"
                     >
-                        Copy Discord Username
+                        Copy Username
                     </button>
 
                 </div>
@@ -455,7 +721,7 @@
                     id="copyMessage"
                     class="copy-message"
                 >
-                    Discord username copied!
+                    ✓ Discord username copied!
                 </p>
 
             </div>
@@ -465,28 +731,73 @@
     </main>
 
 
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
     <footer class="footer">
 
-        <div>
+        <div class="footer-content">
 
-            <a
-                href="#home"
-                class="footer-logo"
-            >
-                purpleknight<span>asa</span>
-            </a>
+            <div>
 
-            <p>
-                Gamer • Owner • Web Developer • Creator
-            </p>
+                <a
+                    href="#home"
+                    class="footer-logo"
+                >
+                    purpleknight<span>asa</span>
+                </a>
+
+
+                <p>
+                    Founder • Gamer • Developer • Creator
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#vantacrest">
+                    Vantacrest
+                </a>
+
+                <a href="#skills">
+                    Skills
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
 
         </div>
 
 
-        <p>
-            © <span id="currentYear"></span>
-            purpleknightasa
-        </p>
+        <div class="footer-bottom">
+
+            <p>
+                ©
+                <span id="currentYear"></span>
+                purpleknightasa.
+                All Rights Reserved.
+            </p>
+
+
+            <a href="#home">
+                Back to Top ↑
+            </a>
+
+        </div>
 
     </footer>
 
