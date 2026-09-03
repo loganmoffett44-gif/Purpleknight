@@ -1,928 +1,498 @@
-/* ========================================
-   PURPLEKNIGHTASA WEBSITE
-   style.css
-======================================== */
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
 
-/* ========================================
-   RESET
-======================================== */
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <meta
+        name="description"
+        content="Official website of purpleknightasa. Gamer, owner, founder, web developer, creator, and Discord community builder."
+    >
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 75px;
-}
+    <meta
+        name="theme-color"
+        content="#7c3aed"
+    >
 
-body {
-    min-height: 100vh;
+    <title>purpleknightasa | Official Website</title>
 
-    font-family: Arial, Helvetica, sans-serif;
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
 
-    background: #08080d;
-    color: #ffffff;
 
-    line-height: 1.6;
+<body>
 
-    overflow-x: hidden;
-}
+    <header class="header">
 
+        <nav class="navbar">
 
-/* ========================================
-   COLORS
-======================================== */
+            <a
+                href="#home"
+                class="logo"
+            >
+                purpleknight<span>asa</span>
+            </a>
 
-:root {
-    --purple: #8b5cf6;
-    --purple-light: #a78bfa;
-    --purple-dark: #6d28d9;
+            <div class="nav-links">
 
-    --background: #08080d;
-    --background-two: #0e0e16;
+                <a href="#home">
+                    Home
+                </a>
 
-    --card: #15151f;
-    --card-hover: #191925;
+                <a href="#about">
+                    About
+                </a>
 
-    --text: #ffffff;
-    --muted: #aaaab6;
+                <a href="#projects">
+                    Projects
+                </a>
 
-    --border: rgba(255, 255, 255, 0.08);
-    --purple-border: rgba(167, 139, 250, 0.35);
-}
+                <a href="#contact">
+                    Contact
+                </a>
 
+            </div>
 
-/* ========================================
-   GENERAL
-======================================== */
+        </nav>
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+    </header>
 
-button {
-    font-family: inherit;
-}
 
-.section {
-    padding: 110px 8%;
-}
+    <main>
 
-.dark-section {
-    background: var(--background-two);
-}
+        <!-- HOME -->
 
-.eyebrow {
-    margin-bottom: 12px;
+        <section
+            id="home"
+            class="hero"
+        >
 
-    color: var(--purple-light);
+            <div class="hero-glow"></div>
 
-    font-size: 12px;
-    font-weight: 800;
+            <div class="hero-content">
 
-    letter-spacing: 4px;
+                <p class="eyebrow">
+                    OFFICIAL WEBSITE
+                </p>
 
-    text-transform: uppercase;
-}
+                <h1>
+                    purpleknight<span>asa</span>
+                </h1>
 
+                <p class="hero-text">
+                    Gamer, Owner & Founder, Web Developer,
+                    Creator, and Discord community builder.
+                </p>
 
-/* ========================================
-   SECTION HEADERS
-======================================== */
+                <div class="hero-buttons">
 
-.section-header {
-    max-width: 750px;
+                    <a
+                        href="#about"
+                        class="button primary-button"
+                    >
+                        About Me
+                    </a>
 
-    margin: 0 auto 55px;
+                    <a
+                        href="#contact"
+                        class="button secondary-button"
+                    >
+                        Contact Me
+                    </a>
 
-    text-align: center;
-}
+                </div>
 
-.section-header h2 {
-    margin-bottom: 14px;
+            </div>
 
-    font-size: clamp(36px, 5vw, 52px);
+        </section>
 
-    line-height: 1.1;
-}
 
-.section-header > p:last-child {
-    color: var(--muted);
+        <!-- ABOUT -->
 
-    font-size: 17px;
-}
+        <section
+            id="about"
+            class="section"
+        >
 
+            <div class="section-header">
 
-/* ========================================
-   HEADER / NAVBAR
-======================================== */
+                <p class="eyebrow">
+                    ABOUT ME
+                </p>
 
-.header {
-    position: fixed;
+                <h2>
+                    Who I Am
+                </h2>
 
-    top: 0;
-    left: 0;
+                <p>
+                    A little more about me and what I do.
+                </p>
 
-    width: 100%;
+            </div>
 
-    z-index: 1000;
 
-    background: rgba(8, 8, 13, 0.88);
+            <div class="about-layout">
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+                <div class="about-card">
 
-    border-bottom: 1px solid var(--border);
+                    <div class="profile-badge">
+                        PK
+                    </div>
 
-    transition:
-        background 0.25s ease,
-        box-shadow 0.25s ease;
-}
+                    <h3>
+                        purpleknightasa
+                    </h3>
 
-.navbar {
-    width: 100%;
-    max-width: 1250px;
+                    <p>
+                        Hey, I'm purpleknightasa.
+                        I'm 18 years old and I'm into gaming,
+                        Discord communities, web development,
+                        and creating online projects.
+                    </p>
 
-    min-height: 74px;
+                    <p>
+                        I enjoy building and managing communities,
+                        making websites, learning more about coding,
+                        and working on different projects.
+                    </p>
 
-    margin: 0 auto;
+                    <p>
+                        I'm always trying new ideas,
+                        improving my skills,
+                        and building something new.
+                    </p>
 
-    padding: 0 30px;
+                </div>
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
+                <div class="status-grid">
 
-/* LOGO */
+                    <div class="status-card">
 
-.logo {
-    color: #ffffff;
+                        <span class="status-label">
+                            AGE
+                        </span>
 
-    font-size: 23px;
-    font-weight: 900;
+                        <strong>
+                            18 Years Old
+                        </strong>
 
-    letter-spacing: -0.5px;
+                        <p>
+                            Personal
+                        </p>
 
-    transition: opacity 0.2s ease;
-}
+                    </div>
 
-.logo:hover {
-    opacity: 0.85;
-}
 
-.logo span {
-    color: var(--purple-light);
+                    <div class="status-card">
 
-    text-shadow:
-        0 0 15px rgba(167, 139, 250, 0.35);
-}
+                        <span class="status-label">
+                            COMMUNITY
+                        </span>
 
+                        <strong>
+                            Owner & Founder
+                        </strong>
 
-/* NAVIGATION LINKS */
+                        <p>
+                            Discord Communities
+                        </p>
 
-.nav-links {
-    display: flex;
-    align-items: center;
+                    </div>
 
-    gap: 30px;
-}
 
-.nav-links a {
-    position: relative;
+                    <div class="status-card">
 
-    padding: 8px 0;
+                        <span class="status-label">
+                            DEVELOPMENT
+                        </span>
 
-    color: var(--muted);
+                        <strong>
+                            Web Developer
+                        </strong>
 
-    font-size: 14px;
-    font-weight: 600;
+                        <p>
+                            HTML • CSS • JavaScript
+                        </p>
 
-    transition: color 0.2s ease;
-}
+                    </div>
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--purple-light);
-}
 
-.nav-links a::after {
-    content: "";
+                    <div class="status-card">
 
-    position: absolute;
+                        <span class="status-label">
+                            DISCORD
+                        </span>
 
-    left: 0;
-    bottom: 2px;
+                        <strong>
+                            purpleknightasa
+                        </strong>
 
-    width: 0;
-    height: 2px;
+                        <p>
+                            Contact Me
+                        </p>
 
-    border-radius: 10px;
+                    </div>
 
-    background: var(--purple-light);
 
-    transition: width 0.2s ease;
-}
+                    <div class="status-card">
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
+                        <span class="status-label">
+                            GAMING
+                        </span>
 
+                        <strong>
+                            Gamer
+                        </strong>
 
-/* ========================================
-   HERO
-======================================== */
+                        <p>
+                            Gaming & Communities
+                        </p>
 
-.hero {
-    position: relative;
+                    </div>
 
-    min-height: 100vh;
 
-    padding: 120px 30px 70px;
+                    <div class="status-card">
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                        <span class="status-label">
+                            CREATOR
+                        </span>
 
-    text-align: center;
+                        <strong>
+                            Project Creator
+                        </strong>
 
-    overflow: hidden;
-}
+                        <p>
+                            Websites • Bots • Communities
+                        </p>
 
-.hero-glow {
-    position: absolute;
+                    </div>
 
-    inset: 0;
+                </div>
 
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(139, 92, 246, 0.28),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 15% 80%,
-            rgba(109, 40, 217, 0.12),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(167, 139, 250, 0.08),
-            transparent 25%
-        );
+            </div>
 
-    pointer-events: none;
-}
+        </section>
 
-.hero-content {
-    position: relative;
 
-    z-index: 2;
+        <!-- PROJECTS -->
 
-    width: 100%;
-    max-width: 900px;
-}
+        <section
+            id="projects"
+            class="section dark-section"
+        >
 
-.hero h1 {
-    margin-bottom: 25px;
+            <div class="section-header">
 
-    font-size: clamp(50px, 9vw, 100px);
+                <p class="eyebrow">
+                    PROJECTS
+                </p>
 
-    line-height: 0.95;
+                <h2>
+                    What I Work On
+                </h2>
 
-    letter-spacing: -3px;
+                <p>
+                    Some of the things I like building
+                    and working on.
+                </p>
 
-    word-break: break-word;
-}
+            </div>
 
-.hero h1 span {
-    color: var(--purple-light);
 
-    text-shadow:
-        0 0 20px rgba(139, 92, 246, 0.45),
-        0 0 50px rgba(139, 92, 246, 0.20);
-}
+            <div class="project-grid">
 
-.hero-text {
-    max-width: 650px;
+                <article class="project-card">
 
-    margin: 0 auto;
+                    <div class="project-icon">
+                        🎮
+                    </div>
 
-    color: var(--muted);
+                    <h3>
+                        Gaming
+                    </h3>
 
-    font-size: 18px;
-}
+                    <p>
+                        Gaming, multiplayer projects,
+                        communities, servers,
+                        and online experiences.
+                    </p>
 
+                    <span class="project-status">
+                        ACTIVE
+                    </span>
 
-/* HERO BUTTONS */
+                </article>
 
-.hero-buttons {
-    margin-top: 35px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                <article class="project-card">
 
-    gap: 14px;
-}
+                    <div class="project-icon">
+                        🌐
+                    </div>
 
+                    <h3>
+                        Discord Communities
+                    </h3>
 
-/* ========================================
-   BUTTONS
-======================================== */
+                    <p>
+                        Creating, owning,
+                        and managing Discord communities
+                        and online projects.
+                    </p>
 
-.button {
-    min-width: 145px;
+                    <span class="project-status">
+                        ACTIVE
+                    </span>
 
-    padding: 13px 22px;
+                </article>
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 
-    border-radius: 9px;
+                <article class="project-card">
 
-    font-size: 14px;
-    font-weight: 800;
+                    <div class="project-icon">
+                        💻
+                    </div>
 
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
+                    <h3>
+                        Web Development
+                    </h3>
 
-.primary-button {
-    color: #ffffff;
+                    <p>
+                        Building websites using
+                        HTML, CSS, JavaScript,
+                        and learning new development skills.
+                    </p>
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--purple-dark),
-            var(--purple)
-        );
+                    <span class="project-status">
+                        LEARNING
+                    </span>
 
-    box-shadow:
-        0 0 25px rgba(139, 92, 246, 0.28);
-}
+                </article>
 
-.primary-button:hover {
-    transform: translateY(-3px);
 
-    box-shadow:
-        0 0 35px rgba(139, 92, 246, 0.45);
-}
+                <article class="project-card">
 
-.secondary-button {
-    color: #ffffff;
+                    <div class="project-icon">
+                        🤖
+                    </div>
 
-    background: rgba(255, 255, 255, 0.03);
+                    <h3>
+                        Discord Bots
+                    </h3>
 
-    border: 1px solid rgba(255, 255, 255, 0.14);
-}
+                    <p>
+                        Working with Discord bots,
+                        commands, systems,
+                        and community tools.
+                    </p>
 
-.secondary-button:hover {
-    transform: translateY(-3px);
+                    <span class="project-status">
+                        IN DEVELOPMENT
+                    </span>
 
-    background: rgba(255, 255, 255, 0.08);
+                </article>
 
-    border-color: rgba(167, 139, 250, 0.3);
-}
+            </div>
 
+        </section>
 
-/* ========================================
-   ABOUT
-======================================== */
 
-.about-card {
-    width: 100%;
-    max-width: 850px;
+        <!-- CONTACT -->
 
-    margin: 0 auto;
+        <section
+            id="contact"
+            class="contact-section"
+        >
 
-    padding: 42px;
+            <div class="contact-box">
 
-    border-radius: 20px;
+                <p class="eyebrow">
+                    CONTACT ME
+                </p>
 
-    background:
-        linear-gradient(
-            145deg,
-            #171721,
-            #101017
-        );
+                <h2>
+                    Get In Touch
+                </h2>
 
-    border: 1px solid var(--border);
+                <p class="contact-text">
+                    The best way to contact me is through Discord.
+                    Feel free to reach out about gaming,
+                    communities, websites, development,
+                    projects, or anything else.
+                </p>
 
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.18);
 
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
+                <div class="discord-box">
 
-.about-card:hover {
-    transform: translateY(-5px);
+                    <span>
+                        MY DISCORD USERNAME
+                    </span>
 
-    border-color: var(--purple-border);
+                    <strong>
+                        purpleknightasa
+                    </strong>
 
-    box-shadow:
-        0 22px 55px rgba(0, 0, 0, 0.25);
-}
+                    <button
+                        id="copyDiscord"
+                        type="button"
+                    >
+                        Copy Discord Username
+                    </button>
 
-.profile-badge {
-    width: 68px;
-    height: 68px;
+                </div>
 
-    margin-bottom: 22px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                <p
+                    id="copyMessage"
+                    class="copy-message"
+                >
+                    Discord username copied!
+                </p>
 
-    border-radius: 16px;
+            </div>
 
-    color: #ffffff;
+        </section>
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--purple-dark),
-            var(--purple)
-        );
+    </main>
 
-    font-size: 21px;
-    font-weight: 900;
 
-    box-shadow:
-        0 0 30px rgba(139, 92, 246, 0.28);
-}
+    <footer class="footer">
 
-.about-card h3 {
-    margin-bottom: 14px;
+        <div>
 
-    font-size: 30px;
-}
+            <a
+                href="#home"
+                class="footer-logo"
+            >
+                purpleknight<span>asa</span>
+            </a>
 
-.about-card p {
-    margin-bottom: 15px;
+            <p>
+                Gamer • Owner • Web Developer • Creator
+            </p>
 
-    color: var(--muted);
+        </div>
 
-    font-size: 16px;
-}
 
-.about-card p:last-child {
-    margin-bottom: 0;
-}
+        <p>
+            © <span id="currentYear"></span>
+            purpleknightasa
+        </p>
 
+    </footer>
 
-/* ========================================
-   PROJECTS
-======================================== */
 
-.project-grid {
-    width: 100%;
-    max-width: 1100px;
+    <script src="script.js"></script>
 
-    margin: 0 auto;
+</body>
 
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 22px;
-}
-
-.project-card {
-    position: relative;
-
-    min-height: 280px;
-
-    padding: 32px;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #171720,
-            #101017
-        );
-
-    border: 1px solid var(--border);
-
-    overflow: hidden;
-
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-7px);
-
-    border-color: rgba(139, 92, 246, 0.45);
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.30);
-}
-
-.project-icon {
-    margin-bottom: 22px;
-
-    font-size: 36px;
-}
-
-.project-card h3 {
-    margin-bottom: 10px;
-
-    font-size: 24px;
-}
-
-.project-card p {
-    color: var(--muted);
-}
-
-
-/* ========================================
-   CONTACT
-======================================== */
-
-.contact-section {
-    padding: 110px 8%;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(139, 92, 246, 0.17),
-            transparent 50%
-        );
-}
-
-.contact-box {
-    width: 100%;
-    max-width: 900px;
-
-    margin: 0 auto;
-
-    padding: 65px 35px;
-
-    text-align: center;
-
-    border-radius: 22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #27123d,
-            #100b19
-        );
-
-    border:
-        1px solid rgba(139, 92, 246, 0.28);
-
-    box-shadow:
-        0 25px 65px rgba(0, 0, 0, 0.25);
-}
-
-.contact-box h2 {
-    margin-bottom: 14px;
-
-    font-size: clamp(38px, 5vw, 52px);
-
-    line-height: 1.1;
-}
-
-.contact-text {
-    max-width: 600px;
-
-    margin: 0 auto 30px;
-
-    color: #c2c2cc;
-
-    font-size: 17px;
-}
-
-
-/* ========================================
-   DISCORD CONTACT
-======================================== */
-
-.discord-box {
-    width: 100%;
-    max-width: 430px;
-
-    margin: 0 auto;
-
-    padding: 25px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 8px;
-
-    border-radius: 15px;
-
-    background:
-        rgba(255, 255, 255, 0.05);
-
-    border:
-        1px solid rgba(167, 139, 250, 0.3);
-
-    box-shadow:
-        inset 0 0 30px rgba(139, 92, 246, 0.04);
-}
-
-.discord-box span {
-    color: #aaaab4;
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-.discord-box strong {
-    color: var(--purple-light);
-
-    font-size: 25px;
-
-    word-break: break-word;
-
-    text-shadow:
-        0 0 15px rgba(167, 139, 250, 0.25);
-}
-
-.discord-box button {
-    width: 100%;
-
-    margin-top: 10px;
-
-    padding: 12px 18px;
-
-    border: none;
-    border-radius: 9px;
-
-    cursor: pointer;
-
-    color: #ffffff;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--purple-dark),
-            var(--purple)
-        );
-
-    font-size: 13px;
-    font-weight: 800;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.discord-box button:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 0 25px rgba(139, 92, 246, 0.35);
-}
-
-.discord-box button:active {
-    transform: translateY(0);
-}
-
-.copy-message {
-    display: none;
-
-    margin-top: 15px;
-
-    color: var(--purple-light);
-
-    font-size: 14px;
-    font-weight: 600;
-}
-
-
-/* ========================================
-   FOOTER
-======================================== */
-
-.footer {
-    min-height: 125px;
-
-    padding: 30px 8%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
-
-    background: #060609;
-
-    border-top: 1px solid var(--border);
-}
-
-.footer-logo {
-    color: #ffffff;
-
-    font-size: 21px;
-    font-weight: 900;
-}
-
-.footer-logo span {
-    color: var(--purple-light);
-}
-
-.footer p {
-    color: #777781;
-
-    font-size: 13px;
-}
-
-
-/* ========================================
-   SCROLLBAR
-======================================== */
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #08080d;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #3f2a67;
-
-    border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--purple-dark);
-}
-
-
-/* ========================================
-   TEXT SELECTION
-======================================== */
-
-::selection {
-    background: var(--purple);
-
-    color: #ffffff;
-}
-
-
-/* ========================================
-   TABLET
-======================================== */
-
-@media (max-width: 850px) {
-
-    .nav-links {
-        display: none;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card {
-        min-height: auto;
-    }
-
-    .footer {
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 600px) {
-
-    .navbar {
-        min-height: 68px;
-
-        padding: 0 20px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-
-    .hero {
-        min-height: 100svh;
-
-        padding:
-            110px 20px 60px;
-    }
-
-    .hero h1 {
-        font-size: clamp(42px, 13vw, 65px);
-
-        letter-spacing: -2px;
-    }
-
-    .hero-text {
-        font-size: 16px;
-    }
-
-    .hero-buttons {
-        max-width: 290px;
-
-        margin:
-            30px auto 0;
-
-        flex-direction: column;
-    }
-
-    .button {
-        width: 100%;
-    }
-
-    .section {
-        padding:
-            85px 20px;
-    }
-
-    .section-header {
-        margin-bottom: 40px;
-    }
-
-    .section-header h2 {
-        font-size: 36px;
-    }
-
-    .about-card {
-        padding: 27px;
-    }
-
-    .about-card h3 {
-        font-size: 25px;
-    }
-
-    .project-card {
-        padding: 27px;
-    }
-
-    .contact-section {
-        padding:
-            85px 20px;
-    }
-
-    .contact-box {
-        padding:
-            50px 20px;
-    }
-
-    .discord-box {
-        padding: 20px;
-    }
-
-    .discord-box strong {
-        font-size: 21px;
-    }
-
-}
-
-
-/* ========================================
-   VERY SMALL SCREENS
-======================================== */
-
-@media (max-width: 380px) {
-
-    .logo {
-        font-size: 16px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .eyebrow {
-        letter-spacing: 3px;
-    }
-
-}
+</html>
