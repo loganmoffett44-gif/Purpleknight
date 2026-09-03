@@ -1,809 +1,1654 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ========================================
+   PURPLEKNIGHTASA OFFICIAL WEBSITE
+   Main Stylesheet
+======================================== */
 
-<head>
-    <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+/* ========================================
+   RESET
+======================================== */
 
-    <meta
-        name="description"
-        content="Official website of purpleknightasa. Founder of Vantacrest SMP, gamer, creator, and web developer."
-    >
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <meta
-        name="theme-color"
-        content="#8b5cf6"
-    >
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
 
-    <title>purpleknightasa | Official Website</title>
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-</head>
+    font-family: Arial, Helvetica, sans-serif;
 
+    background: #07070c;
+    color: #ffffff;
 
-<body>
+    line-height: 1.6;
+}
 
-    <!-- ========================================
-         NAVBAR
-    ========================================= -->
 
-    <header class="header">
+/* ========================================
+   WEBSITE COLORS
+======================================== */
 
-        <nav class="navbar">
+:root {
+    --purple-light: #c4b5fd;
+    --purple: #a78bfa;
+    --purple-main: #8b5cf6;
+    --purple-dark: #7c3aed;
+    --purple-deep: #4c1d95;
 
-            <a
-                href="#home"
-                class="logo"
-            >
-                purpleknight<span>asa</span>
-            </a>
+    --pink: #d946ef;
+    --blue: #6366f1;
+    --cyan: #22d3ee;
+    --green: #22c55e;
 
+    --background: #07070c;
+    --background-two: #0c0b12;
+    --background-three: #100b19;
 
-            <div class="nav-links">
+    --card: #14131d;
+    --card-light: #191724;
 
-                <a href="#home">
-                    Home
-                </a>
+    --text: #ffffff;
+    --muted: #aaaab8;
 
-                <a href="#about">
-                    About
-                </a>
+    --border: rgba(255, 255, 255, 0.08);
+    --purple-border: rgba(167, 139, 250, 0.30);
+}
 
-                <a href="#vantacrest">
-                    Vantacrest
-                </a>
 
-                <a href="#skills">
-                    Skills
-                </a>
+/* ========================================
+   GENERAL
+======================================== */
 
-                <a href="#contact">
-                    Contact
-                </a>
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-            </div>
+button {
+    font-family: inherit;
+}
 
-        </nav>
+.section {
+    position: relative;
 
-    </header>
+    padding: 115px 8%;
+}
 
+.section-header {
+    width: 100%;
+    max-width: 760px;
 
-    <main>
+    margin: 0 auto 55px;
 
-        <!-- ========================================
-             HOME
-        ========================================= -->
+    text-align: center;
+}
 
-        <section
-            id="home"
-            class="hero"
-        >
+.section-tag {
+    margin-bottom: 10px;
 
-            <div class="hero-background"></div>
+    color: var(--purple);
 
-            <div class="floating-glow glow-one"></div>
-            <div class="floating-glow glow-two"></div>
-            <div class="floating-glow glow-three"></div>
+    font-size: 12px;
+    font-weight: 900;
 
+    letter-spacing: 4px;
 
-            <div class="hero-content">
+    text-transform: uppercase;
+}
 
-                <div class="hero-badge">
-                    OFFICIAL WEBSITE
-                </div>
+.section-header h2 {
+    margin-bottom: 15px;
 
+    font-size: clamp(38px, 5vw, 55px);
+    line-height: 1.05;
 
-                <h1>
-                    Hey, I'm
-                    <span>purpleknightasa</span>
-                </h1>
+    color: #ffffff;
+}
 
+.section-header h2 span {
+    color: var(--purple);
+}
 
-                <p class="hero-description">
-                    Founder of Vantacrest SMP,
-                    gamer, community builder,
-                    creator, and web developer.
-                </p>
+.section-header > p:last-child {
+    color: var(--muted);
 
+    font-size: 17px;
+}
 
-                <div class="hero-tags">
 
-                    <span>
-                        Founder
-                    </span>
+/* ========================================
+   HEADER
+======================================== */
 
-                    <span>
-                        Gamer
-                    </span>
+.header {
+    position: fixed;
 
-                    <span>
-                        Web Developer
-                    </span>
+    top: 0;
+    left: 0;
 
-                    <span>
-                        Creator
-                    </span>
+    width: 100%;
 
-                </div>
+    z-index: 1000;
 
+    background: rgba(7, 7, 12, 0.88);
 
-                <div class="hero-buttons">
+    border-bottom: 1px solid var(--border);
 
-                    <a
-                        href="#about"
-                        class="button primary-button"
-                    >
-                        Learn About Me
-                    </a>
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
 
-                    <a
-                        href="#contact"
-                        class="button secondary-button"
-                    >
-                        Contact Me
-                    </a>
+.navbar {
+    width: 100%;
+    max-width: 1280px;
 
-                </div>
+    min-height: 76px;
 
-            </div>
+    margin: 0 auto;
 
+    padding: 0 30px;
 
-            <a
-                href="#about"
-                class="scroll-down"
-            >
-                <span>
-                    Explore
-                </span>
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-                <strong>
-                    ↓
-                </strong>
-            </a>
 
-        </section>
+/* ========================================
+   LOGO
+======================================== */
 
+.logo {
+    color: #ffffff;
 
-        <!-- ========================================
-             ABOUT
-        ========================================= -->
+    font-size: 23px;
+    font-weight: 900;
 
-        <section
-            id="about"
-            class="section"
-        >
+    letter-spacing: -0.7px;
 
-            <div class="section-header">
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
 
-                <p class="section-tag">
-                    ABOUT ME
-                </p>
+.logo:hover {
+    transform: translateY(-1px);
+}
 
-                <h2>
-                    Who I Am
-                </h2>
+.logo span {
+    color: var(--purple);
 
-                <p>
-                    A little about me,
-                    what I do,
-                    and what I'm building.
-                </p>
+    text-shadow:
+        0 0 18px rgba(167, 139, 250, 0.45);
+}
 
-            </div>
 
+/* ========================================
+   NAVIGATION
+======================================== */
 
-            <div class="about-layout">
+.nav-links {
+    display: flex;
+    align-items: center;
 
+    gap: 30px;
+}
 
-                <div class="about-card main-about-card">
+.nav-links a {
+    position: relative;
 
-                    <div class="profile-logo">
-                        PK
-                    </div>
+    padding: 8px 0;
 
+    color: #a7a7b5;
 
-                    <div class="profile-status">
-                        <span></span>
-                        Online Creator
-                    </div>
+    font-size: 14px;
+    font-weight: 700;
 
+    transition: color 0.2s ease;
+}
 
-                    <h3>
-                        purpleknightasa
-                    </h3>
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--purple-light);
+}
 
+.nav-links a::after {
+    content: "";
 
-                    <p>
-                        Hey, I'm purpleknightasa.
-                        I'm 18 years old and I spend
-                        a lot of my time gaming,
-                        building communities,
-                        learning web development,
-                        and working on online projects.
-                    </p>
+    position: absolute;
 
+    left: 50%;
+    bottom: 0;
 
-                    <p>
-                        I enjoy creating things from scratch,
-                        improving Discord communities,
-                        working on websites,
-                        learning new coding skills,
-                        and coming up with new ideas.
-                    </p>
+    width: 0;
+    height: 2px;
 
+    border-radius: 20px;
 
-                    <p>
-                        I'm also the Founder of
-                        Vantacrest SMP,
-                        where I help build and manage
-                        the community and the overall
-                        server experience.
-                    </p>
+    background: linear-gradient(
+        90deg,
+        var(--purple-dark),
+        var(--purple)
+    );
 
-                </div>
+    transform: translateX(-50%);
 
+    transition: width 0.2s ease;
+}
 
-                <div class="about-info-grid">
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
 
 
-                    <div class="info-card age-card">
+/* ========================================
+   HERO
+======================================== */
 
-                        <div class="info-icon">
-                            🎂
-                        </div>
+.hero {
+    position: relative;
 
-                        <span>
-                            AGE
-                        </span>
+    min-height: 100vh;
 
-                        <strong>
-                            18 Years Old
-                        </strong>
+    padding: 125px 30px 75px;
 
-                    </div>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    text-align: center;
 
-                    <div class="info-card founder-card">
+    overflow: hidden;
+}
 
-                        <div class="info-icon">
-                            👑
-                        </div>
+.hero-background {
+    position: absolute;
 
-                        <span>
-                            ROLE
-                        </span>
+    inset: 0;
 
-                        <strong>
-                            Founder
-                        </strong>
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(139, 92, 246, 0.38),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(124, 58, 237, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(217, 70, 239, 0.12),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #0a0811,
+            #07070c
+        );
+}
 
-                    </div>
+.floating-glow {
+    position: absolute;
 
+    border-radius: 50%;
 
-                    <div class="info-card discord-card">
+    filter: blur(80px);
 
-                        <div class="info-icon">
-                            💬
-                        </div>
+    opacity: 0.40;
 
-                        <span>
-                            DISCORD
-                        </span>
+    pointer-events: none;
+}
 
-                        <strong>
-                            purpleknightasa
-                        </strong>
+.glow-one {
+    width: 250px;
+    height: 250px;
 
-                    </div>
+    top: 25%;
+    left: 7%;
 
+    background: var(--purple-dark);
+}
 
-                    <div class="info-card dev-card">
+.glow-two {
+    width: 220px;
+    height: 220px;
 
-                        <div class="info-icon">
-                            💻
-                        </div>
+    top: 55%;
+    right: 7%;
 
-                        <span>
-                            DEVELOPMENT
-                        </span>
+    background: var(--pink);
+}
 
-                        <strong>
-                            Web Developer
-                        </strong>
+.glow-three {
+    width: 180px;
+    height: 180px;
 
-                    </div>
+    bottom: 3%;
+    left: 45%;
 
+    background: var(--purple-main);
+}
 
-                    <div class="info-card gamer-card">
+.hero-content {
+    position: relative;
 
-                        <div class="info-icon">
-                            🎮
-                        </div>
+    z-index: 5;
 
-                        <span>
-                            INTEREST
-                        </span>
+    width: 100%;
+    max-width: 950px;
+}
 
-                        <strong>
-                            Gaming
-                        </strong>
+.hero-badge {
+    display: inline-block;
 
-                    </div>
+    margin-bottom: 22px;
 
+    padding: 8px 15px;
 
-                    <div class="info-card creator-card">
+    border-radius: 999px;
 
-                        <div class="info-icon">
-                            ✨
-                        </div>
+    color: var(--purple-light);
 
-                        <span>
-                            CREATOR
-                        </span>
+    background: rgba(139, 92, 246, 0.12);
 
-                        <strong>
-                            Online Projects
-                        </strong>
+    border: 1px solid var(--purple-border);
 
-                    </div>
+    font-size: 11px;
+    font-weight: 900;
 
+    letter-spacing: 3px;
 
-                </div>
+    box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.08);
+}
 
-            </div>
+.hero h1 {
+    margin-bottom: 25px;
 
-        </section>
+    color: #ffffff;
 
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.98;
 
-        <!-- ========================================
-             VANTACREST SMP
-        ========================================= -->
+    letter-spacing: -4px;
+}
 
-        <section
-            id="vantacrest"
-            class="section vantacrest-section"
-        >
+.hero h1 span {
+    display: block;
 
-            <div class="section-header">
+    margin-top: 8px;
 
-                <p class="section-tag">
-                    MY COMMUNITY
-                </p>
+    color: var(--purple);
 
-                <h2>
-                    Vantacrest SMP
-                </h2>
+    text-shadow:
+        0 0 25px rgba(139, 92, 246, 0.45),
+        0 0 65px rgba(139, 92, 246, 0.20);
+}
 
-                <p>
-                    One of the main communities
-                    I'm currently building.
-                </p>
+.hero-description {
+    width: 100%;
+    max-width: 700px;
 
-            </div>
+    margin: 0 auto;
 
+    color: #b9b9c6;
 
-            <div class="vantacrest-card">
+    font-size: 19px;
+}
 
-                <div class="vantacrest-glow"></div>
 
+/* ========================================
+   HERO TAGS
+======================================== */
 
-                <div class="vantacrest-content">
+.hero-tags {
+    margin-top: 25px;
 
-                    <div class="vantacrest-badge">
-                        FOUNDER
-                    </div>
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 
+    gap: 10px;
+}
 
-                    <h3>
-                        Vantacrest SMP
-                    </h3>
+.hero-tags span {
+    padding: 7px 13px;
 
+    border-radius: 999px;
 
-                    <p>
-                        I'm the Founder of Vantacrest SMP,
-                        a Minecraft SMP community focused on
-                        creating a fun and organized experience
-                        for players.
-                    </p>
+    color: var(--purple-light);
 
+    background: rgba(139, 92, 246, 0.08);
 
-                    <p>
-                        I help manage the community,
-                        work on server ideas,
-                        organize the Discord,
-                        plan features,
-                        and help shape the future
-                        of the SMP.
-                    </p>
+    border: 1px solid rgba(167, 139, 250, 0.18);
 
+    font-size: 12px;
+    font-weight: 700;
+}
 
-                    <div class="vantacrest-stats">
 
-                        <div>
+/* ========================================
+   BUTTONS
+======================================== */
 
-                            <span>
-                                ROLE
-                            </span>
+.hero-buttons {
+    margin-top: 35px;
 
-                            <strong>
-                                Founder
-                            </strong>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                        </div>
+    gap: 14px;
+}
 
+.button {
+    min-width: 160px;
 
-                        <div>
+    padding: 13px 23px;
 
-                            <span>
-                                TYPE
-                            </span>
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-                            <strong>
-                                Minecraft SMP
-                            </strong>
+    border-radius: 10px;
 
-                        </div>
+    font-size: 14px;
+    font-weight: 800;
 
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
 
-                        <div>
+.primary-button {
+    color: #ffffff;
 
-                            <span>
-                                STATUS
-                            </span>
+    background: linear-gradient(
+        135deg,
+        var(--purple-deep),
+        var(--purple-dark),
+        var(--purple-main)
+    );
 
-                            <strong class="online-status">
-                                Active
-                            </strong>
+    box-shadow:
+        0 0 28px rgba(139, 92, 246, 0.30);
+}
 
-                        </div>
+.primary-button:hover {
+    transform: translateY(-4px);
 
-                    </div>
+    box-shadow:
+        0 0 42px rgba(139, 92, 246, 0.48);
+}
 
-                </div>
+.secondary-button {
+    color: #ffffff;
 
+    background: rgba(255, 255, 255, 0.04);
 
-                <div class="vantacrest-symbol">
-                    V
-                </div>
+    border: 1px solid var(--purple-border);
+}
 
-            </div>
+.secondary-button:hover {
+    transform: translateY(-4px);
 
-        </section>
+    background: rgba(139, 92, 246, 0.10);
 
+    border-color: rgba(167, 139, 250, 0.50);
+}
 
-        <!-- ========================================
-             SKILLS
-        ========================================= -->
 
-        <section
-            id="skills"
-            class="section skills-section"
-        >
+/* ========================================
+   SCROLL DOWN
+======================================== */
 
-            <div class="section-header">
+.scroll-down {
+    position: absolute;
 
-                <p class="section-tag">
-                    WHAT I DO
-                </p>
+    z-index: 5;
 
-                <h2>
-                    Skills & Interests
-                </h2>
+    bottom: 25px;
+    left: 50%;
 
-                <p>
-                    Some of the things I enjoy
-                    learning and working on.
-                </p>
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-            </div>
+    gap: 3px;
 
+    color: #777784;
 
-            <div class="skills-grid">
+    font-size: 11px;
 
+    transform: translateX(-50%);
+}
 
-                <article class="skill-card purple-card">
+.scroll-down strong {
+    color: var(--purple);
 
-                    <div class="skill-icon">
-                        💻
-                    </div>
+    font-size: 22px;
 
-                    <h3>
-                        Web Development
-                    </h3>
+    animation: scrollArrow 1.5s ease-in-out infinite;
+}
 
-                    <p>
-                        Building websites using
-                        HTML, CSS, and JavaScript
-                        while continuing to learn
-                        more about development.
-                    </p>
+@keyframes scrollArrow {
+    0% {
+        transform: translateY(0);
+    }
 
-                    <div class="skill-tags">
+    50% {
+        transform: translateY(7px);
+    }
 
-                        <span>
-                            HTML
-                        </span>
+    100% {
+        transform: translateY(0);
+    }
+}
 
-                        <span>
-                            CSS
-                        </span>
 
-                        <span>
-                            JavaScript
-                        </span>
+/* ========================================
+   ABOUT
+======================================== */
 
-                    </div>
+#about {
+    background: linear-gradient(
+        180deg,
+        #07070c,
+        #0b0911
+    );
+}
 
-                </article>
+.about-layout {
+    width: 100%;
+    max-width: 1180px;
 
+    margin: 0 auto;
 
-                <article class="skill-card blue-card">
+    display: grid;
 
-                    <div class="skill-icon">
-                        💬
-                    </div>
+    grid-template-columns: 1.15fr 1fr;
 
-                    <h3>
-                        Discord Communities
-                    </h3>
+    gap: 25px;
+}
 
-                    <p>
-                        Building, organizing,
-                        and managing Discord communities,
-                        roles, channels, systems,
-                        and community projects.
-                    </p>
+.main-about-card {
+    position: relative;
 
-                    <div class="skill-tags">
+    padding: 42px;
 
-                        <span>
-                            Discord
-                        </span>
+    border-radius: 22px;
 
-                        <span>
-                            Community
-                        </span>
+    overflow: hidden;
 
-                        <span>
-                            Management
-                        </span>
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(139, 92, 246, 0.20),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #181321,
+            #0f0d16
+        );
 
-                    </div>
+    border: 1px solid rgba(167, 139, 250, 0.20);
 
-                </article>
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.25);
+}
 
+.profile-logo {
+    width: 75px;
+    height: 75px;
 
-                <article class="skill-card pink-card">
+    margin-bottom: 18px;
 
-                    <div class="skill-icon">
-                        🎮
-                    </div>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                    <h3>
-                        Gaming
-                    </h3>
+    border-radius: 19px;
 
-                    <p>
-                        Gaming is one of my main interests
-                        and a big part of the communities
-                        and projects I enjoy building.
-                    </p>
+    color: #ffffff;
 
-                    <div class="skill-tags">
+    background: linear-gradient(
+        135deg,
+        var(--purple-deep),
+        var(--purple-main),
+        var(--pink)
+    );
 
-                        <span>
-                            Minecraft
-                        </span>
+    font-size: 23px;
+    font-weight: 900;
 
-                        <span>
-                            Multiplayer
-                        </span>
+    box-shadow:
+        0 0 35px rgba(139, 92, 246, 0.35);
+}
 
-                        <span>
-                            Communities
-                        </span>
+.profile-status {
+    display: inline-flex;
+    align-items: center;
 
-                    </div>
+    gap: 7px;
 
-                </article>
+    margin-bottom: 14px;
 
+    color: #aaaab7;
 
-                <article class="skill-card orange-card">
+    font-size: 12px;
+}
 
-                    <div class="skill-icon">
-                        ⚙️
-                    </div>
+.profile-status span {
+    width: 8px;
+    height: 8px;
 
-                    <h3>
-                        Projects
-                    </h3>
+    border-radius: 50%;
 
-                    <p>
-                        I enjoy experimenting with
-                        websites, Discord bots,
-                        gaming projects,
-                        and new ideas.
-                    </p>
+    background: var(--purple-main);
 
-                    <div class="skill-tags">
+    box-shadow:
+        0 0 12px rgba(139, 92, 246, 0.90);
+}
 
-                        <span>
-                            Websites
-                        </span>
+.main-about-card h3 {
+    margin-bottom: 15px;
 
-                        <span>
-                            Bots
-                        </span>
+    color: var(--purple-light);
 
-                        <span>
-                            Ideas
-                        </span>
+    font-size: 31px;
+}
 
-                    </div>
+.main-about-card p {
+    margin-bottom: 15px;
 
-                </article>
+    color: var(--muted);
 
+    font-size: 16px;
+}
 
-            </div>
+.main-about-card p:last-child {
+    margin-bottom: 0;
+}
 
-        </section>
 
+/* ========================================
+   ABOUT INFO CARDS
+======================================== */
 
-        <!-- ========================================
-             CONTACT
-        ========================================= -->
+.about-info-grid {
+    display: grid;
 
-        <section
-            id="contact"
-            class="contact-section"
-        >
+    grid-template-columns: repeat(2, 1fr);
 
-            <div class="contact-glow"></div>
+    gap: 15px;
+}
 
+.info-card {
+    position: relative;
 
-            <div class="contact-box">
+    min-height: 145px;
 
-                <div class="contact-icon">
-                    💬
-                </div>
+    padding: 22px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-                <p class="section-tag">
-                    CONTACT ME
-                </p>
+    border-radius: 17px;
 
+    overflow: hidden;
 
-                <h2>
-                    Want to reach me?
-                </h2>
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(139, 92, 246, 0.12),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #17151f,
+            #0f0e15
+        );
 
+    border: 1px solid var(--border);
 
-                <p class="contact-description">
-                    The best way to contact me
-                    is through Discord.
-                    Feel free to reach out
-                    about Vantacrest SMP,
-                    websites, gaming,
-                    communities, or projects.
-                </p>
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
 
+.info-card:hover {
+    transform: translateY(-5px);
 
-                <div class="discord-contact">
+    border-color: rgba(167, 139, 250, 0.45);
 
-                    <span>
-                        DISCORD USERNAME
-                    </span>
+    box-shadow:
+        0 18px 40px rgba(139, 92, 246, 0.10);
+}
 
-                    <strong>
-                        purpleknightasa
-                    </strong>
+.info-icon {
+    margin-bottom: 9px;
 
+    font-size: 25px;
+}
 
-                    <button
-                        id="copyDiscord"
-                        type="button"
-                    >
-                        Copy Username
-                    </button>
+.info-card span {
+    margin-bottom: 4px;
 
-                </div>
+    color: #888896;
 
+    font-size: 9px;
+    font-weight: 900;
 
-                <p
-                    id="copyMessage"
-                    class="copy-message"
-                >
-                    ✓ Discord username copied!
-                </p>
+    letter-spacing: 2px;
+}
 
-            </div>
+.info-card strong {
+    color: var(--purple-light);
 
-        </section>
+    font-size: 17px;
+}
 
-    </main>
+.age-card strong {
+    color: #d8b4fe;
+}
 
+.founder-card strong {
+    color: #c4b5fd;
+}
 
-    <!-- ========================================
-         FOOTER
-    ========================================= -->
+.discord-card strong {
+    color: #a78bfa;
+}
 
-    <footer class="footer">
+.dev-card strong {
+    color: #ddd6fe;
+}
 
-        <div class="footer-content">
+.gamer-card strong {
+    color: #c4b5fd;
+}
 
-            <div>
+.creator-card strong {
+    color: #e9d5ff;
+}
 
-                <a
-                    href="#home"
-                    class="footer-logo"
-                >
-                    purpleknight<span>asa</span>
-                </a>
 
+/* ========================================
+   VANTACREST SMP
+======================================== */
 
-                <p>
-                    Founder • Gamer • Developer • Creator
-                </p>
+.vantacrest-section {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(124, 58, 237, 0.08),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #0c0912,
+            #10091a
+        );
+}
 
-            </div>
+.vantacrest-card {
+    position: relative;
 
+    width: 100%;
+    max-width: 1100px;
 
-            <div class="footer-links">
+    min-height: 420px;
 
-                <a href="#home">
-                    Home
-                </a>
+    margin: 0 auto;
 
-                <a href="#about">
-                    About
-                </a>
+    padding: 50px;
 
-                <a href="#vantacrest">
-                    Vantacrest
-                </a>
+    display: grid;
 
-                <a href="#skills">
-                    Skills
-                </a>
+    grid-template-columns: 1.3fr 0.7fr;
 
-                <a href="#contact">
-                    Contact
-                </a>
+    align-items: center;
 
-            </div>
+    overflow: hidden;
 
-        </div>
+    border-radius: 26px;
 
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(139, 92, 246, 0.28),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #1b1029,
+            #0d0914
+        );
 
-        <div class="footer-bottom">
+    border: 1px solid rgba(167, 139, 250, 0.28);
 
-            <p>
-                ©
-                <span id="currentYear"></span>
-                purpleknightasa.
-                All Rights Reserved.
-            </p>
+    box-shadow:
+        0 30px 75px rgba(0, 0, 0, 0.32);
+}
 
+.vantacrest-glow {
+    position: absolute;
 
-            <a href="#home">
-                Back to Top ↑
-            </a>
+    width: 300px;
+    height: 300px;
 
-        </div>
+    top: -70px;
+    right: -90px;
 
-    </footer>
+    border-radius: 50%;
 
+    background: rgba(139, 92, 246, 0.25);
 
-    <script src="script.js"></script>
+    filter: blur(70px);
 
-</body>
+    pointer-events: none;
+}
 
-</html>
+.vantacrest-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+.vantacrest-badge {
+    display: inline-block;
+
+    margin-bottom: 17px;
+
+    padding: 7px 13px;
+
+    border-radius: 999px;
+
+    color: var(--purple-light);
+
+    background: rgba(139, 92, 246, 0.14);
+
+    border: 1px solid rgba(167, 139, 250, 0.30);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.vantacrest-content h3 {
+    margin-bottom: 15px;
+
+    color: var(--purple-light);
+
+    font-size: clamp(35px, 5vw, 52px);
+    line-height: 1.1;
+
+    text-shadow:
+        0 0 25px rgba(139, 92, 246, 0.20);
+}
+
+.vantacrest-content > p {
+    margin-bottom: 14px;
+
+    color: #b8b8c5;
+}
+
+.vantacrest-stats {
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.vantacrest-stats div {
+    padding: 16px;
+
+    border-radius: 13px;
+
+    background: rgba(139, 92, 246, 0.07);
+
+    border: 1px solid rgba(167, 139, 250, 0.13);
+}
+
+.vantacrest-stats span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #80808d;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.vantacrest-stats strong {
+    color: var(--purple-light);
+
+    font-size: 14px;
+}
+
+.online-status {
+    color: #c4b5fd;
+}
+
+.vantacrest-symbol {
+    position: relative;
+
+    z-index: 2;
+
+    width: 210px;
+    height: 210px;
+
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 45px;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        145deg,
+        var(--purple-deep),
+        var(--purple-main),
+        var(--pink)
+    );
+
+    font-size: 100px;
+    font-weight: 900;
+
+    box-shadow:
+        0 0 80px rgba(139, 92, 246, 0.32);
+
+    transform: rotate(6deg);
+}
+
+
+/* ========================================
+   SKILLS
+======================================== */
+
+.skills-section {
+    background:
+        linear-gradient(
+            180deg,
+            #09090f,
+            #0b0912
+        );
+}
+
+.skills-grid {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.skill-card {
+    position: relative;
+
+    min-height: 290px;
+
+    padding: 32px;
+
+    border-radius: 19px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(139, 92, 246, 0.12),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #17151f,
+            #0f0e15
+        );
+
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(167, 139, 250, 0.45);
+
+    box-shadow:
+        0 20px 50px rgba(139, 92, 246, 0.12);
+}
+
+.skill-icon {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(139, 92, 246, 0.10);
+
+    border: 1px solid rgba(167, 139, 250, 0.15);
+
+    font-size: 27px;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+
+    color: var(--purple-light);
+
+    font-size: 24px;
+}
+
+.skill-card > p {
+    color: var(--muted);
+}
+
+.skill-tags {
+    margin-top: 22px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.skill-tags span {
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    color: var(--purple-light);
+
+    background: rgba(139, 92, 246, 0.10);
+
+    border: 1px solid rgba(167, 139, 250, 0.13);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact-section {
+    position: relative;
+
+    padding: 120px 8%;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0c0912,
+            #07070c
+        );
+}
+
+.contact-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: 50%;
+    left: 50%;
+
+    border-radius: 50%;
+
+    background: rgba(139, 92, 246, 0.20);
+
+    filter: blur(95px);
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+.contact-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 65px 35px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(139, 92, 246, 0.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #1d102e,
+            #0e0916
+        );
+
+    border: 1px solid rgba(167, 139, 250, 0.30);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.32);
+}
+
+.contact-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        var(--purple-deep),
+        var(--purple-main)
+    );
+
+    font-size: 28px;
+
+    box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.30);
+}
+
+.contact-box h2 {
+    margin-bottom: 14px;
+
+    color: var(--purple-light);
+
+    font-size: clamp(38px, 5vw, 54px);
+}
+
+.contact-description {
+    width: 100%;
+    max-width: 640px;
+
+    margin: 0 auto 30px;
+
+    color: #bebeca;
+
+    font-size: 17px;
+}
+
+
+/* ========================================
+   DISCORD CONTACT
+======================================== */
+
+.discord-contact {
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+
+    border-radius: 16px;
+
+    background: rgba(139, 92, 246, 0.07);
+
+    border: 1px solid rgba(167, 139, 250, 0.30);
+}
+
+.discord-contact span {
+    color: #8c8c99;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.discord-contact strong {
+    color: var(--purple-light);
+
+    font-size: 26px;
+
+    text-shadow:
+        0 0 18px rgba(167, 139, 250, 0.30);
+}
+
+.discord-contact button {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        var(--purple-deep),
+        var(--purple-dark),
+        var(--purple-main)
+    );
+
+    font-size: 13px;
+    font-weight: 900;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.discord-contact button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.45);
+}
+
+.discord-contact button:active {
+    transform: translateY(0);
+}
+
+.copy-message {
+    display: none;
+
+    margin-top: 15px;
+
+    color: var(--purple-light);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    background: #050508;
+
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 40px 30px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.footer-logo {
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: var(--purple);
+}
+
+.footer-content div > p {
+    margin-top: 5px;
+
+    color: #777784;
+
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #92929f;
+
+    font-size: 13px;
+
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--purple);
+}
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 20px 30px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #676774;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: var(--purple);
+
+    transition: color 0.2s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--purple-light);
+}
+
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #07070c;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+
+    background: linear-gradient(
+        var(--purple-deep),
+        var(--purple-main)
+    );
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--purple-main);
+}
+
+
+/* ========================================
+   TEXT SELECTION
+======================================== */
+
+::selection {
+    color: #ffffff;
+
+    background: var(--purple-dark);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .vantacrest-card {
+        grid-template-columns: 1fr;
+    }
+
+    .vantacrest-symbol {
+        display: none;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 68px;
+
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 110px 20px 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(43px, 13vw, 65px);
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        max-width: 300px;
+
+        margin: 30px auto 0;
+
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+
+    .section {
+        padding: 90px 20px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 37px;
+    }
+
+    .main-about-card {
+        padding: 28px;
+    }
+
+    .main-about-card h3 {
+        font-size: 26px;
+    }
+
+    .about-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        min-height: 120px;
+    }
+
+    .vantacrest-card {
+        min-height: auto;
+
+        padding: 30px 24px;
+    }
+
+    .vantacrest-content h3 {
+        font-size: 36px;
+    }
+
+    .vantacrest-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        min-height: auto;
+
+        padding: 27px;
+    }
+
+    .contact-section {
+        padding: 90px 20px;
+    }
+
+    .contact-box {
+        padding: 50px 20px;
+    }
+
+    .discord-contact {
+        padding: 20px;
+    }
+
+    .discord-contact strong {
+        font-size: 21px;
+    }
+
+    .footer-content {
+        padding: 35px 20px 25px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        padding: 20px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-badge {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+    .discord-contact strong {
+        font-size: 19px;
+    }
+
+}
