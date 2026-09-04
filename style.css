@@ -1,7 +1,38 @@
 /* ========================================
-   PURPLEKNIGHTASA OFFICIAL WEBSITE
-   Main Stylesheet
+   PURPLEKNIGHTASA
+   OFFICIAL WEBSITE
 ======================================== */
+
+
+/* ========================================
+   WEBSITE COLORS
+======================================== */
+
+:root {
+    --purple-100: #ede9fe;
+    --purple-200: #ddd6fe;
+    --purple-300: #c4b5fd;
+    --purple-400: #a78bfa;
+    --purple-500: #8b5cf6;
+    --purple-600: #7c3aed;
+    --purple-700: #6d28d9;
+    --purple-800: #5b21b6;
+    --purple-900: #4c1d95;
+
+    --background: #060609;
+    --background-light: #0b0911;
+    --background-purple: #10091a;
+
+    --card: #121019;
+    --card-light: #181421;
+
+    --white: #ffffff;
+    --text: #eeeeF5;
+    --muted: #aaa7b7;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --purple-border: rgba(167, 139, 250, 0.25);
+}
 
 
 /* ========================================
@@ -21,51 +52,19 @@ html {
 
 body {
     min-height: 100vh;
+
     overflow-x: hidden;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    background: #07070c;
-    color: #ffffff;
+    background: var(--background);
+    color: var(--white);
 
-    line-height: 1.6;
+    line-height: 1.65;
 }
-
-
-/* ========================================
-   WEBSITE COLORS
-======================================== */
-
-:root {
-    --purple-light: #c4b5fd;
-    --purple: #a78bfa;
-    --purple-main: #8b5cf6;
-    --purple-dark: #7c3aed;
-    --purple-deep: #4c1d95;
-
-    --pink: #d946ef;
-    --blue: #6366f1;
-    --cyan: #22d3ee;
-    --green: #22c55e;
-
-    --background: #07070c;
-    --background-two: #0c0b12;
-    --background-three: #100b19;
-
-    --card: #14131d;
-    --card-light: #191724;
-
-    --text: #ffffff;
-    --muted: #aaaab8;
-
-    --border: rgba(255, 255, 255, 0.08);
-    --purple-border: rgba(167, 139, 250, 0.30);
-}
-
-
-/* ========================================
-   GENERAL
-======================================== */
 
 a {
     color: inherit;
@@ -75,6 +74,11 @@ a {
 button {
     font-family: inherit;
 }
+
+
+/* ========================================
+   GENERAL SECTIONS
+======================================== */
 
 .section {
     position: relative;
@@ -94,9 +98,9 @@ button {
 .section-tag {
     margin-bottom: 10px;
 
-    color: var(--purple);
+    color: var(--purple-400);
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 900;
 
     letter-spacing: 4px;
@@ -107,14 +111,11 @@ button {
 .section-header h2 {
     margin-bottom: 15px;
 
-    font-size: clamp(38px, 5vw, 55px);
+    font-size: clamp(38px, 5vw, 58px);
+
     line-height: 1.05;
 
-    color: #ffffff;
-}
-
-.section-header h2 span {
-    color: var(--purple);
+    color: var(--white);
 }
 
 .section-header > p:last-child {
@@ -138,7 +139,7 @@ button {
 
     z-index: 1000;
 
-    background: rgba(7, 7, 12, 0.88);
+    background: rgba(6, 6, 9, 0.82);
 
     border-bottom: 1px solid var(--border);
 
@@ -165,45 +166,27 @@ button {
     justify-content: space-between;
 }
 
-
-/* ========================================
-   LOGO
-======================================== */
-
 .logo {
-    color: #ffffff;
+    color: var(--white);
 
     font-size: 23px;
     font-weight: 900;
 
-    letter-spacing: -0.7px;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-}
-
-.logo:hover {
-    transform: translateY(-1px);
+    letter-spacing: -0.8px;
 }
 
 .logo span {
-    color: var(--purple);
+    color: var(--purple-400);
 
     text-shadow:
-        0 0 18px rgba(167, 139, 250, 0.45);
+        0 0 20px rgba(167, 139, 250, 0.45);
 }
-
-
-/* ========================================
-   NAVIGATION
-======================================== */
 
 .nav-links {
     display: flex;
     align-items: center;
 
-    gap: 30px;
+    gap: 27px;
 }
 
 .nav-links a {
@@ -211,9 +194,9 @@ button {
 
     padding: 8px 0;
 
-    color: #a7a7b5;
+    color: #9d99aa;
 
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
 
     transition: color 0.2s ease;
@@ -221,7 +204,7 @@ button {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--purple-light);
+    color: var(--purple-300);
 }
 
 .nav-links a::after {
@@ -237,11 +220,7 @@ button {
 
     border-radius: 20px;
 
-    background: linear-gradient(
-        90deg,
-        var(--purple-dark),
-        var(--purple)
-    );
+    background: var(--purple-500);
 
     transform: translateX(-50%);
 
@@ -269,9 +248,9 @@ button {
     align-items: center;
     justify-content: center;
 
-    text-align: center;
-
     overflow: hidden;
+
+    text-align: center;
 }
 
 .hero-background {
@@ -281,35 +260,33 @@ button {
 
     background:
         radial-gradient(
-            circle at 50% 30%,
-            rgba(139, 92, 246, 0.38),
-            transparent 35%
+            circle at 50% 25%,
+            rgba(124, 58, 237, 0.40),
+            transparent 32%
         ),
         radial-gradient(
-            circle at 15% 70%,
-            rgba(124, 58, 237, 0.18),
-            transparent 28%
+            circle at 20% 70%,
+            rgba(91, 33, 182, 0.18),
+            transparent 26%
         ),
         radial-gradient(
-            circle at 85% 75%,
-            rgba(217, 70, 239, 0.12),
-            transparent 28%
+            circle at 80% 75%,
+            rgba(139, 92, 246, 0.16),
+            transparent 27%
         ),
         linear-gradient(
             180deg,
-            #0a0811,
-            #07070c
+            #09060f,
+            #060609
         );
 }
 
-.floating-glow {
+.glow {
     position: absolute;
 
     border-radius: 50%;
 
     filter: blur(80px);
-
-    opacity: 0.40;
 
     pointer-events: none;
 }
@@ -318,30 +295,30 @@ button {
     width: 250px;
     height: 250px;
 
-    top: 25%;
+    top: 23%;
     left: 7%;
 
-    background: var(--purple-dark);
+    background: rgba(124, 58, 237, 0.30);
 }
 
 .glow-two {
-    width: 220px;
-    height: 220px;
+    width: 230px;
+    height: 230px;
 
-    top: 55%;
+    top: 53%;
     right: 7%;
 
-    background: var(--pink);
+    background: rgba(139, 92, 246, 0.25);
 }
 
 .glow-three {
     width: 180px;
     height: 180px;
 
-    bottom: 3%;
+    bottom: 0;
     left: 45%;
 
-    background: var(--purple-main);
+    background: rgba(76, 29, 149, 0.30);
 }
 
 .hero-content {
@@ -350,7 +327,7 @@ button {
     z-index: 5;
 
     width: 100%;
-    max-width: 950px;
+    max-width: 970px;
 }
 
 .hero-badge {
@@ -362,27 +339,23 @@ button {
 
     border-radius: 999px;
 
-    color: var(--purple-light);
+    color: var(--purple-300);
 
-    background: rgba(139, 92, 246, 0.12);
+    background: rgba(139, 92, 246, 0.10);
 
     border: 1px solid var(--purple-border);
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 900;
 
     letter-spacing: 3px;
-
-    box-shadow:
-        0 0 30px rgba(139, 92, 246, 0.08);
 }
 
 .hero h1 {
     margin-bottom: 25px;
 
-    color: #ffffff;
+    font-size: clamp(52px, 8vw, 95px);
 
-    font-size: clamp(52px, 8vw, 96px);
     line-height: 0.98;
 
     letter-spacing: -4px;
@@ -393,34 +366,28 @@ button {
 
     margin-top: 8px;
 
-    color: var(--purple);
+    color: var(--purple-400);
 
     text-shadow:
-        0 0 25px rgba(139, 92, 246, 0.45),
-        0 0 65px rgba(139, 92, 246, 0.20);
+        0 0 30px rgba(139, 92, 246, 0.40),
+        0 0 70px rgba(139, 92, 246, 0.17);
 }
 
 .hero-description {
     width: 100%;
-    max-width: 700px;
+    max-width: 720px;
 
     margin: 0 auto;
 
-    color: #b9b9c6;
+    color: #bbb7c6;
 
     font-size: 19px;
 }
-
-
-/* ========================================
-   HERO TAGS
-======================================== */
 
 .hero-tags {
     margin-top: 25px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 
@@ -428,17 +395,17 @@ button {
 }
 
 .hero-tags span {
-    padding: 7px 13px;
+    padding: 7px 12px;
 
     border-radius: 999px;
 
-    color: var(--purple-light);
+    color: var(--purple-200);
 
-    background: rgba(139, 92, 246, 0.08);
+    background: rgba(139, 92, 246, 0.07);
 
-    border: 1px solid rgba(167, 139, 250, 0.18);
+    border: 1px solid rgba(167, 139, 250, 0.15);
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
 }
 
@@ -451,16 +418,15 @@ button {
     margin-top: 35px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
 
     gap: 14px;
 }
 
 .button {
-    min-width: 160px;
+    min-width: 165px;
 
-    padding: 13px 23px;
+    padding: 13px 22px;
 
     display: inline-flex;
     align-items: center;
@@ -473,23 +439,20 @@ button {
 
     transition:
         transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 }
 
 .primary-button {
-    color: #ffffff;
-
     background: linear-gradient(
         135deg,
-        var(--purple-deep),
-        var(--purple-dark),
-        var(--purple-main)
+        var(--purple-800),
+        var(--purple-600),
+        var(--purple-500)
     );
 
     box-shadow:
-        0 0 28px rgba(139, 92, 246, 0.30);
+        0 0 30px rgba(139, 92, 246, 0.30);
 }
 
 .primary-button:hover {
@@ -500,9 +463,7 @@ button {
 }
 
 .secondary-button {
-    color: #ffffff;
-
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(139, 92, 246, 0.05);
 
     border: 1px solid var(--purple-border);
 }
@@ -510,9 +471,7 @@ button {
 .secondary-button:hover {
     transform: translateY(-4px);
 
-    background: rgba(139, 92, 246, 0.10);
-
-    border-color: rgba(167, 139, 250, 0.50);
+    background: rgba(139, 92, 246, 0.12);
 }
 
 
@@ -532,34 +491,29 @@ button {
     flex-direction: column;
     align-items: center;
 
-    gap: 3px;
+    color: #706c7c;
 
-    color: #777784;
-
-    font-size: 11px;
+    font-size: 10px;
 
     transform: translateX(-50%);
 }
 
 .scroll-down strong {
-    color: var(--purple);
+    color: var(--purple-400);
 
     font-size: 22px;
 
-    animation: scrollArrow 1.5s ease-in-out infinite;
+    animation: scrollDown 1.5s ease-in-out infinite;
 }
 
-@keyframes scrollArrow {
-    0% {
+@keyframes scrollDown {
+    0%,
+    100% {
         transform: translateY(0);
     }
 
     50% {
         transform: translateY(7px);
-    }
-
-    100% {
-        transform: translateY(0);
     }
 }
 
@@ -571,8 +525,8 @@ button {
 #about {
     background: linear-gradient(
         180deg,
-        #07070c,
-        #0b0911
+        #060609,
+        #0b0811
     );
 }
 
@@ -589,52 +543,46 @@ button {
     gap: 25px;
 }
 
-.main-about-card {
-    position: relative;
-
+.about-card {
     padding: 42px;
 
-    border-radius: 22px;
-
-    overflow: hidden;
+    border-radius: 23px;
 
     background:
         radial-gradient(
             circle at top right,
-            rgba(139, 92, 246, 0.20),
-            transparent 35%
+            rgba(139, 92, 246, 0.18),
+            transparent 34%
         ),
         linear-gradient(
             145deg,
-            #181321,
-            #0f0d16
+            #17121f,
+            #0d0b12
         );
 
-    border: 1px solid rgba(167, 139, 250, 0.20);
+    border: 1px solid var(--purple-border);
 
     box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.25);
+        0 25px 65px rgba(0, 0, 0, 0.30);
 }
 
 .profile-logo {
     width: 75px;
     height: 75px;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 19px;
-
-    color: #ffffff;
+    border-radius: 18px;
 
     background: linear-gradient(
         135deg,
-        var(--purple-deep),
-        var(--purple-main),
-        var(--pink)
+        var(--purple-900),
+        var(--purple-600),
+        var(--purple-400)
     );
 
     font-size: 23px;
@@ -645,14 +593,14 @@ button {
 }
 
 .profile-status {
+    margin-bottom: 15px;
+
     display: inline-flex;
     align-items: center;
 
     gap: 7px;
 
-    margin-bottom: 14px;
-
-    color: #aaaab7;
+    color: #aaa6b5;
 
     font-size: 12px;
 }
@@ -663,29 +611,27 @@ button {
 
     border-radius: 50%;
 
-    background: var(--purple-main);
+    background: var(--purple-400);
 
     box-shadow:
-        0 0 12px rgba(139, 92, 246, 0.90);
+        0 0 12px rgba(167, 139, 250, 0.80);
 }
 
-.main-about-card h3 {
+.about-card h3 {
     margin-bottom: 15px;
 
-    color: var(--purple-light);
+    color: var(--purple-200);
 
-    font-size: 31px;
+    font-size: 30px;
 }
 
-.main-about-card p {
+.about-card p {
     margin-bottom: 15px;
 
     color: var(--muted);
-
-    font-size: 16px;
 }
 
-.main-about-card p:last-child {
+.about-card p:last-child {
     margin-bottom: 0;
 }
 
@@ -703,11 +649,9 @@ button {
 }
 
 .info-card {
-    position: relative;
+    min-height: 135px;
 
-    min-height: 145px;
-
-    padding: 22px;
+    padding: 21px;
 
     display: flex;
     flex-direction: column;
@@ -715,18 +659,16 @@ button {
 
     border-radius: 17px;
 
-    overflow: hidden;
-
     background:
         radial-gradient(
             circle at top right,
-            rgba(139, 92, 246, 0.12),
+            rgba(139, 92, 246, 0.10),
             transparent 45%
         ),
         linear-gradient(
             145deg,
-            #17151f,
-            #0f0e15
+            #15121c,
+            #0c0b11
         );
 
     border: 1px solid var(--border);
@@ -743,82 +685,58 @@ button {
     border-color: rgba(167, 139, 250, 0.45);
 
     box-shadow:
-        0 18px 40px rgba(139, 92, 246, 0.10);
+        0 15px 40px rgba(139, 92, 246, 0.10);
 }
 
 .info-icon {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 
-    font-size: 25px;
+    font-size: 24px;
 }
 
 .info-card span {
-    margin-bottom: 4px;
-
-    color: #888896;
+    color: #777381;
 
     font-size: 9px;
     font-weight: 900;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.6px;
 }
 
 .info-card strong {
-    color: var(--purple-light);
+    margin-top: 3px;
 
-    font-size: 17px;
-}
+    color: var(--purple-300);
 
-.age-card strong {
-    color: #d8b4fe;
-}
-
-.founder-card strong {
-    color: #c4b5fd;
-}
-
-.discord-card strong {
-    color: #a78bfa;
-}
-
-.dev-card strong {
-    color: #ddd6fe;
-}
-
-.gamer-card strong {
-    color: #c4b5fd;
-}
-
-.creator-card strong {
-    color: #e9d5ff;
+    font-size: 16px;
 }
 
 
 /* ========================================
-   VANTACREST SMP
+   VANTACREST
 ======================================== */
 
 .vantacrest-section {
     background:
         radial-gradient(
-            circle at center,
+            circle at 50% 30%,
             rgba(124, 58, 237, 0.08),
-            transparent 45%
+            transparent 40%
         ),
         linear-gradient(
             180deg,
-            #0c0912,
-            #10091a
+            #0c0813,
+            #10081a
         );
 }
 
-.vantacrest-card {
+.vantacrest-main-card {
     position: relative;
 
     width: 100%;
-    max-width: 1100px;
+    max-width: 1150px;
 
-    min-height: 420px;
+    min-height: 440px;
 
     margin: 0 auto;
 
@@ -826,7 +744,7 @@ button {
 
     display: grid;
 
-    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-columns: 1.35fr 0.65fr;
 
     align-items: center;
 
@@ -836,62 +754,58 @@ button {
 
     background:
         radial-gradient(
-            circle at 75% 40%,
-            rgba(139, 92, 246, 0.28),
-            transparent 32%
+            circle at 80% 35%,
+            rgba(139, 92, 246, 0.27),
+            transparent 30%
         ),
         linear-gradient(
             135deg,
-            #1b1029,
-            #0d0914
+            #1a1028,
+            #0b0811
         );
 
     border: 1px solid rgba(167, 139, 250, 0.28);
 
     box-shadow:
-        0 30px 75px rgba(0, 0, 0, 0.32);
+        0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
 .vantacrest-glow {
     position: absolute;
 
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
 
-    top: -70px;
-    right: -90px;
+    top: -90px;
+    right: -100px;
 
     border-radius: 50%;
 
-    background: rgba(139, 92, 246, 0.25);
+    background: rgba(139, 92, 246, 0.23);
 
-    filter: blur(70px);
-
-    pointer-events: none;
+    filter: blur(75px);
 }
 
 .vantacrest-content {
     position: relative;
 
     z-index: 2;
-
-    max-width: 650px;
 }
 
 .vantacrest-badge {
     display: inline-block;
 
-    margin-bottom: 17px;
+    margin-bottom: 18px;
 
-    padding: 7px 13px;
+    padding: 7px 12px;
 
     border-radius: 999px;
 
-    color: var(--purple-light);
+    color: var(--purple-300);
 
-    background: rgba(139, 92, 246, 0.14);
+    background: rgba(139, 92, 246, 0.12);
 
-    border: 1px solid rgba(167, 139, 250, 0.30);
+    border: 1px solid var(--purple-border);
 
     font-size: 10px;
     font-weight: 900;
@@ -902,71 +816,26 @@ button {
 .vantacrest-content h3 {
     margin-bottom: 15px;
 
-    color: var(--purple-light);
+    color: var(--purple-200);
 
-    font-size: clamp(35px, 5vw, 52px);
-    line-height: 1.1;
-
-    text-shadow:
-        0 0 25px rgba(139, 92, 246, 0.20);
+    font-size: clamp(38px, 5vw, 55px);
 }
 
-.vantacrest-content > p {
+.vantacrest-content p {
+    max-width: 680px;
+
     margin-bottom: 14px;
 
-    color: #b8b8c5;
+    color: #b9b5c4;
 }
 
-.vantacrest-stats {
-    margin-top: 25px;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 12px;
-}
-
-.vantacrest-stats div {
-    padding: 16px;
-
-    border-radius: 13px;
-
-    background: rgba(139, 92, 246, 0.07);
-
-    border: 1px solid rgba(167, 139, 250, 0.13);
-}
-
-.vantacrest-stats span {
-    display: block;
-
-    margin-bottom: 3px;
-
-    color: #80808d;
-
-    font-size: 9px;
-    font-weight: 900;
-
-    letter-spacing: 1.5px;
-}
-
-.vantacrest-stats strong {
-    color: var(--purple-light);
-
-    font-size: 14px;
-}
-
-.online-status {
-    color: #c4b5fd;
-}
-
-.vantacrest-symbol {
+.vantacrest-logo {
     position: relative;
 
     z-index: 2;
 
-    width: 210px;
-    height: 210px;
+    width: 220px;
+    height: 220px;
 
     margin-left: auto;
 
@@ -976,22 +845,207 @@ button {
 
     border-radius: 45px;
 
-    color: #ffffff;
-
     background: linear-gradient(
         145deg,
-        var(--purple-deep),
-        var(--purple-main),
-        var(--pink)
+        var(--purple-900),
+        var(--purple-600),
+        var(--purple-400)
     );
 
-    font-size: 100px;
+    font-size: 105px;
     font-weight: 900;
 
     box-shadow:
         0 0 80px rgba(139, 92, 246, 0.32);
 
     transform: rotate(6deg);
+
+    transition: transform 0.25s ease;
+}
+
+.vantacrest-stats {
+    margin-top: 26px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.vantacrest-stats div {
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(139, 92, 246, 0.06);
+
+    border: 1px solid rgba(167, 139, 250, 0.12);
+}
+
+.vantacrest-stats span {
+    display: block;
+
+    color: #777381;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 1.3px;
+}
+
+.vantacrest-stats strong {
+    color: var(--purple-300);
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   VANTACREST FEATURES
+======================================== */
+
+.features-heading {
+    margin: 80px auto 35px;
+
+    text-align: center;
+}
+
+.features-heading h3 {
+    font-size: clamp(30px, 4vw, 43px);
+}
+
+.feature-grid {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.feature-card {
+    min-height: 190px;
+
+    padding: 23px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #15111d,
+            #0c0a10
+        );
+
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--purple-border);
+
+    box-shadow:
+        0 15px 40px rgba(139, 92, 246, 0.09);
+}
+
+.feature-card > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 27px;
+}
+
+.feature-card h4 {
+    margin-bottom: 7px;
+
+    color: var(--purple-300);
+
+    font-size: 18px;
+}
+
+.feature-card p {
+    color: #9894a2;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   FOUNDER SECTION
+======================================== */
+
+.founder-section {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 55px auto 0;
+
+    padding: 40px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(139, 92, 246, 0.16),
+            transparent 40%
+        ),
+        #100c16;
+
+    border: 1px solid var(--purple-border);
+}
+
+.founder-section h3 {
+    margin-bottom: 12px;
+
+    color: var(--purple-200);
+
+    font-size: 30px;
+}
+
+.founder-section p {
+    color: var(--muted);
+}
+
+.founder-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.founder-list span {
+    padding: 11px 13px;
+
+    border-radius: 9px;
+
+    color: var(--purple-300);
+
+    background: rgba(139, 92, 246, 0.07);
+
+    border: 1px solid rgba(167, 139, 250, 0.12);
+
+    font-size: 12px;
+    font-weight: 700;
 }
 
 
@@ -1000,12 +1054,7 @@ button {
 ======================================== */
 
 .skills-section {
-    background:
-        linear-gradient(
-            180deg,
-            #09090f,
-            #0b0912
-        );
+    background: #08070c;
 }
 
 .skills-grid {
@@ -1022,43 +1071,39 @@ button {
 }
 
 .skill-card {
-    position: relative;
+    min-height: 295px;
 
-    min-height: 290px;
-
-    padding: 32px;
+    padding: 31px;
 
     border-radius: 19px;
-
-    overflow: hidden;
 
     background:
         radial-gradient(
             circle at top right,
-            rgba(139, 92, 246, 0.12),
+            rgba(139, 92, 246, 0.11),
             transparent 40%
         ),
         linear-gradient(
             145deg,
-            #17151f,
-            #0f0e15
+            #15121d,
+            #0c0b10
         );
 
     border: 1px solid var(--border);
 
     transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-7px);
 
-    border-color: rgba(167, 139, 250, 0.45);
+    border-color: var(--purple-border);
 
     box-shadow:
-        0 20px 50px rgba(139, 92, 246, 0.12);
+        0 20px 50px rgba(139, 92, 246, 0.10);
 }
 
 .skill-icon {
@@ -1073,19 +1118,19 @@ button {
 
     border-radius: 14px;
 
-    background: rgba(139, 92, 246, 0.10);
+    background: rgba(139, 92, 246, 0.09);
 
-    border: 1px solid rgba(167, 139, 250, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.14);
 
-    font-size: 27px;
+    font-size: 26px;
 }
 
 .skill-card h3 {
     margin-bottom: 10px;
 
-    color: var(--purple-light);
+    color: var(--purple-300);
 
-    font-size: 24px;
+    font-size: 23px;
 }
 
 .skill-card > p {
@@ -1102,15 +1147,108 @@ button {
 }
 
 .skill-tags span {
-    padding: 5px 10px;
+    padding: 5px 9px;
 
     border-radius: 999px;
 
-    color: var(--purple-light);
+    color: var(--purple-300);
 
-    background: rgba(139, 92, 246, 0.10);
+    background: rgba(139, 92, 246, 0.08);
 
-    border: 1px solid rgba(167, 139, 250, 0.13);
+    border: 1px solid rgba(167, 139, 250, 0.12);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* ========================================
+   PROJECTS
+======================================== */
+
+.projects-section {
+    background:
+        linear-gradient(
+            180deg,
+            #0b0811,
+            #0e0816
+        );
+}
+
+.projects-grid {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+
+    padding: 32px;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(139, 92, 246, 0.13),
+            transparent 42%
+        ),
+        #100d16;
+
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--purple-border);
+}
+
+.project-number {
+    margin-bottom: 18px;
+
+    color: var(--purple-600);
+
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+
+    color: var(--purple-300);
+
+    font-size: 24px;
+}
+
+.project-card p {
+    margin-bottom: 18px;
+
+    color: var(--muted);
+}
+
+.project-type {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    color: var(--purple-300);
+
+    background: rgba(139, 92, 246, 0.08);
 
     font-size: 10px;
     font-weight: 800;
@@ -1128,32 +1266,25 @@ button {
 
     overflow: hidden;
 
-    background:
-        linear-gradient(
-            180deg,
-            #0c0912,
-            #07070c
-        );
+    background: #07060a;
 }
 
-.contact-glow {
+.contact-background {
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
 
     top: 50%;
     left: 50%;
 
     border-radius: 50%;
 
-    background: rgba(139, 92, 246, 0.20);
+    background: rgba(124, 58, 237, 0.16);
 
-    filter: blur(95px);
+    filter: blur(100px);
 
     transform: translate(-50%, -50%);
-
-    pointer-events: none;
 }
 
 .contact-box {
@@ -1175,19 +1306,19 @@ button {
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(139, 92, 246, 0.25),
+            rgba(139, 92, 246, 0.20),
             transparent 35%
         ),
         linear-gradient(
             145deg,
-            #1d102e,
-            #0e0916
+            #190f26,
+            #0d0913
         );
 
-    border: 1px solid rgba(167, 139, 250, 0.30);
+    border: 1px solid rgba(167, 139, 250, 0.27);
 
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.32);
+        0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
 .contact-icon {
@@ -1200,12 +1331,12 @@ button {
     align-items: center;
     justify-content: center;
 
-    border-radius: 18px;
+    border-radius: 17px;
 
     background: linear-gradient(
         135deg,
-        var(--purple-deep),
-        var(--purple-main)
+        var(--purple-900),
+        var(--purple-500)
     );
 
     font-size: 28px;
@@ -1217,30 +1348,25 @@ button {
 .contact-box h2 {
     margin-bottom: 14px;
 
-    color: var(--purple-light);
+    color: var(--purple-200);
 
-    font-size: clamp(38px, 5vw, 54px);
+    font-size: clamp(38px, 5vw, 55px);
 }
 
 .contact-description {
     width: 100%;
-    max-width: 640px;
+    max-width: 650px;
 
     margin: 0 auto 30px;
 
-    color: #bebeca;
+    color: #bbb7c5;
 
-    font-size: 17px;
+    font-size: 16px;
 }
 
-
-/* ========================================
-   DISCORD CONTACT
-======================================== */
-
-.discord-contact {
+.discord-box {
     width: 100%;
-    max-width: 430px;
+    max-width: 450px;
 
     margin: 0 auto;
 
@@ -1250,17 +1376,15 @@ button {
     flex-direction: column;
     align-items: center;
 
-    gap: 7px;
-
     border-radius: 16px;
 
     background: rgba(139, 92, 246, 0.07);
 
-    border: 1px solid rgba(167, 139, 250, 0.30);
+    border: 1px solid var(--purple-border);
 }
 
-.discord-contact span {
-    color: #8c8c99;
+.discord-box span {
+    color: #777381;
 
     font-size: 9px;
     font-weight: 900;
@@ -1268,19 +1392,19 @@ button {
     letter-spacing: 2px;
 }
 
-.discord-contact strong {
-    color: var(--purple-light);
+.discord-box strong {
+    margin: 4px 0 13px;
 
-    font-size: 26px;
+    color: var(--purple-300);
+
+    font-size: 27px;
 
     text-shadow:
         0 0 18px rgba(167, 139, 250, 0.30);
 }
 
-.discord-contact button {
+.discord-box button {
     width: 100%;
-
-    margin-top: 10px;
 
     padding: 12px 18px;
 
@@ -1289,14 +1413,14 @@ button {
 
     cursor: pointer;
 
-    color: #ffffff;
-
     background: linear-gradient(
         135deg,
-        var(--purple-deep),
-        var(--purple-dark),
-        var(--purple-main)
+        var(--purple-800),
+        var(--purple-600),
+        var(--purple-500)
     );
+
+    color: var(--white);
 
     font-size: 13px;
     font-weight: 900;
@@ -1306,26 +1430,62 @@ button {
         box-shadow 0.2s ease;
 }
 
-.discord-contact button:hover {
+.discord-box button:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 0 30px rgba(139, 92, 246, 0.45);
-}
-
-.discord-contact button:active {
-    transform: translateY(0);
+        0 0 30px rgba(139, 92, 246, 0.40);
 }
 
 .copy-message {
     display: none;
 
-    margin-top: 15px;
+    margin-top: 14px;
 
-    color: var(--purple-light);
+    color: var(--purple-300);
 
     font-size: 13px;
     font-weight: 700;
+}
+
+.contact-info-grid {
+    width: 100%;
+    max-width: 680px;
+
+    margin: 32px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.contact-info-grid div {
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(139, 92, 246, 0.05);
+
+    border: 1px solid rgba(167, 139, 250, 0.10);
+}
+
+.contact-info-grid span {
+    display: block;
+
+    color: #777381;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.contact-info-grid strong {
+    color: var(--purple-300);
+
+    font-size: 12px;
 }
 
 
@@ -1334,18 +1494,18 @@ button {
 ======================================== */
 
 .footer {
-    background: #050508;
+    background: #040406;
 
     border-top: 1px solid var(--border);
 }
 
-.footer-content {
+.footer-main {
     width: 100%;
     max-width: 1200px;
 
     margin: 0 auto;
 
-    padding: 40px 30px 28px;
+    padding: 42px 30px 28px;
 
     display: flex;
     align-items: center;
@@ -1355,42 +1515,83 @@ button {
 }
 
 .footer-logo {
-    color: #ffffff;
-
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 900;
 }
 
 .footer-logo span {
-    color: var(--purple);
+    color: var(--purple-400);
 }
 
-.footer-content div > p {
-    margin-top: 5px;
+.footer-brand p {
+    margin-top: 6px;
 
-    color: #777784;
+    color: #74717d;
 
     font-size: 12px;
 }
 
 .footer-links {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
 
-    gap: 20px;
+    gap: 18px;
 }
 
 .footer-links a {
-    color: #92929f;
+    color: #8f8b99;
 
-    font-size: 13px;
+    font-size: 12px;
 
     transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-    color: var(--purple);
+    color: var(--purple-400);
+}
+
+.footer-extra {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 20px 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.footer-extra div {
+    padding: 13px;
+
+    border-radius: 10px;
+
+    background: rgba(139, 92, 246, 0.04);
+
+    text-align: center;
+}
+
+.footer-extra span {
+    display: block;
+
+    color: #66626f;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.footer-extra strong {
+    color: var(--purple-300);
+
+    font-size: 12px;
 }
 
 .footer-bottom {
@@ -1399,29 +1600,22 @@ button {
 
     margin: 0 auto;
 
-    padding: 20px 30px 28px;
+    padding: 20px 30px 27px;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
 
     gap: 20px;
 
-    color: #676774;
+    color: #625f69;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
 
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .footer-bottom a {
-    color: var(--purple);
-
-    transition: color 0.2s ease;
-}
-
-.footer-bottom a:hover {
-    color: var(--purple-light);
+    color: var(--purple-400);
 }
 
 
@@ -1434,31 +1628,26 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-    background: #07070c;
+    background: #060609;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 20px;
 
     background: linear-gradient(
-        var(--purple-deep),
-        var(--purple-main)
+        var(--purple-900),
+        var(--purple-500)
     );
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--purple-main);
+    background: var(--purple-500);
 }
 
-
-/* ========================================
-   TEXT SELECTION
-======================================== */
-
 ::selection {
-    color: #ffffff;
+    color: white;
 
-    background: var(--purple-dark);
+    background: var(--purple-600);
 }
 
 
@@ -1466,21 +1655,29 @@ button {
    TABLET
 ======================================== */
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
 
     .about-layout {
         grid-template-columns: 1fr;
     }
 
-    .vantacrest-card {
+    .vantacrest-main-card {
         grid-template-columns: 1fr;
     }
 
-    .vantacrest-symbol {
+    .vantacrest-logo {
         display: none;
     }
 
-    .skills-grid {
+    .vantacrest-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .founder-section {
         grid-template-columns: 1fr;
     }
 
@@ -1491,7 +1688,7 @@ button {
    MOBILE
 ======================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 
     .nav-links {
         display: none;
@@ -1514,7 +1711,7 @@ button {
     }
 
     .hero h1 {
-        font-size: clamp(43px, 13vw, 65px);
+        font-size: clamp(43px, 13vw, 64px);
 
         letter-spacing: -2px;
     }
@@ -1525,7 +1722,7 @@ button {
 
     .hero-buttons {
         width: 100%;
-        max-width: 300px;
+        max-width: 310px;
 
         margin: 30px auto 0;
 
@@ -1544,48 +1741,42 @@ button {
         padding: 90px 20px;
     }
 
-    .section-header {
-        margin-bottom: 40px;
-    }
-
-    .section-header h2 {
-        font-size: 37px;
-    }
-
-    .main-about-card {
+    .about-card {
         padding: 28px;
-    }
-
-    .main-about-card h3 {
-        font-size: 26px;
     }
 
     .about-info-grid {
         grid-template-columns: 1fr;
     }
 
-    .info-card {
-        min-height: 120px;
-    }
-
-    .vantacrest-card {
+    .vantacrest-main-card {
         min-height: auto;
 
         padding: 30px 24px;
-    }
-
-    .vantacrest-content h3 {
-        font-size: 36px;
     }
 
     .vantacrest-stats {
         grid-template-columns: 1fr;
     }
 
-    .skill-card {
-        min-height: auto;
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
 
-        padding: 27px;
+    .founder-section {
+        padding: 28px 22px;
+    }
+
+    .founder-list {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 
     .contact-section {
@@ -1596,15 +1787,15 @@ button {
         padding: 50px 20px;
     }
 
-    .discord-contact {
-        padding: 20px;
-    }
-
-    .discord-contact strong {
+    .discord-box strong {
         font-size: 21px;
     }
 
-    .footer-content {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-main {
         padding: 35px 20px 25px;
 
         flex-direction: column;
@@ -1616,39 +1807,18 @@ button {
         justify-content: center;
     }
 
+    .footer-extra {
+        padding: 20px;
+
+        grid-template-columns: 1fr;
+    }
+
     .footer-bottom {
         padding: 20px;
 
         flex-direction: column;
 
         text-align: center;
-    }
-
-}
-
-
-/* ========================================
-   VERY SMALL PHONES
-======================================== */
-
-@media (max-width: 380px) {
-
-    .logo {
-        font-size: 16px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero-badge {
-        font-size: 9px;
-
-        letter-spacing: 2px;
-    }
-
-    .discord-contact strong {
-        font-size: 19px;
     }
 
 }

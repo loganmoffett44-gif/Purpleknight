@@ -11,12 +11,9 @@
 const currentYear =
     document.getElementById("currentYear");
 
-
 if (currentYear) {
-
     currentYear.textContent =
         new Date().getFullYear();
-
 }
 
 
@@ -27,18 +24,16 @@ if (currentYear) {
 const header =
     document.querySelector(".header");
 
-
 function updateHeader() {
 
     if (!header) {
         return;
     }
 
-
     if (window.scrollY > 40) {
 
         header.style.background =
-            "rgba(7, 7, 12, 0.97)";
+            "rgba(6, 6, 9, 0.97)";
 
         header.style.boxShadow =
             "0 12px 35px rgba(0, 0, 0, 0.35)";
@@ -46,7 +41,7 @@ function updateHeader() {
     } else {
 
         header.style.background =
-            "rgba(7, 7, 12, 0.82)";
+            "rgba(6, 6, 9, 0.82)";
 
         header.style.boxShadow =
             "none";
@@ -55,12 +50,10 @@ function updateHeader() {
 
 }
 
-
 window.addEventListener(
     "scroll",
     updateHeader
 );
-
 
 window.addEventListener(
     "load",
@@ -73,79 +66,58 @@ window.addEventListener(
 // ========================================
 
 const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
+    document.querySelectorAll("section[id]");
 
 const navLinks =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
-
+    document.querySelectorAll(".nav-links a");
 
 function updateActiveNavigation() {
 
-    let currentSection =
-        "home";
+    let currentSection = "home";
 
+    sections.forEach(function (section) {
 
-    sections.forEach(
-        section => {
+        const sectionTop =
+            section.offsetTop - 170;
 
-            const sectionTop =
-                section.offsetTop - 170;
+        const sectionHeight =
+            section.offsetHeight;
 
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY <
+            sectionTop + sectionHeight
+        ) {
 
-            const sectionHeight =
-                section.offsetHeight;
-
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY <
-                sectionTop + sectionHeight
-            ) {
-
-                currentSection =
-                    section.id;
-
-            }
+            currentSection =
+                section.id;
 
         }
-    );
+
+    });
 
 
-    navLinks.forEach(
-        link => {
+    navLinks.forEach(function (link) {
 
-            link.classList.remove(
-                "active"
-            );
+        link.classList.remove("active");
 
+        if (
+            link.getAttribute("href") ===
+            "#" + currentSection
+        ) {
 
-            if (
-                link.getAttribute("href") ===
-                "#" + currentSection
-            ) {
-
-                link.classList.add(
-                    "active"
-                );
-
-            }
+            link.classList.add("active");
 
         }
-    );
+
+    });
 
 }
-
 
 window.addEventListener(
     "scroll",
     updateActiveNavigation
 );
-
 
 window.addEventListener(
     "load",
@@ -157,103 +129,86 @@ window.addEventListener(
 // SMOOTH SCROLLING
 // ========================================
 
-const internalLinks =
-    document.querySelectorAll(
-        'a[href^="#"]'
+const pageLinks =
+    document.querySelectorAll('a[href^="#"]');
+
+pageLinks.forEach(function (link) {
+
+    link.addEventListener(
+        "click",
+        function (event) {
+
+            const targetID =
+                link.getAttribute("href");
+
+            if (
+                !targetID ||
+                targetID === "#"
+            ) {
+                return;
+            }
+
+            const target =
+                document.querySelector(targetID);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
     );
 
-
-internalLinks.forEach(
-    link => {
-
-        link.addEventListener(
-            "click",
-            event => {
-
-                const targetID =
-                    link.getAttribute(
-                        "href"
-                    );
-
-
-                if (
-                    !targetID ||
-                    targetID === "#"
-                ) {
-
-                    return;
-
-                }
-
-
-                const targetSection =
-                    document.querySelector(
-                        targetID
-                    );
-
-
-                if (!targetSection) {
-
-                    return;
-
-                }
-
-
-                event.preventDefault();
-
-
-                targetSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-        );
-
-    }
-);
+});
 
 
 // ========================================
 // COPY DISCORD USERNAME
 // ========================================
 
-const copyDiscordButton =
-    document.getElementById(
-        "copyDiscord"
-    );
-
+const copyButton =
+    document.getElementById("copyDiscord");
 
 const copyMessage =
-    document.getElementById(
-        "copyMessage"
-    );
-
+    document.getElementById("copyMessage");
 
 const discordUsername =
     "purpleknightasa";
 
 
-if (copyDiscordButton) {
+if (copyButton) {
 
-    copyDiscordButton.addEventListener(
+    copyButton.addEventListener(
         "click",
-        async () => {
+        function () {
 
-            try {
+            if (
+                navigator.clipboard &&
+                navigator.clipboard.writeText
+            ) {
 
-                await navigator.clipboard
-                    .writeText(
-                        discordUsername
-                    );
+                navigator.clipboard
+                    .writeText(discordUsername)
+                    .then(function () {
 
+                        showCopySuccess();
 
-                showCopiedMessage();
+                    })
+                    .catch(function () {
 
+                        fallbackCopy();
 
-            } catch (error) {
+                    });
 
-                fallbackCopyDiscord();
+            } else {
+
+                fallbackCopy();
 
             }
 
@@ -267,61 +222,48 @@ if (copyDiscordButton) {
 // FALLBACK COPY
 // ========================================
 
-function fallbackCopyDiscord() {
+function fallbackCopy() {
 
     const textArea =
-        document.createElement(
-            "textarea"
-        );
-
+        document.createElement("textarea");
 
     textArea.value =
         discordUsername;
 
-
     textArea.style.position =
         "fixed";
 
-
     textArea.style.opacity =
         "0";
-
 
     document.body.appendChild(
         textArea
     );
 
-
+    textArea.focus();
     textArea.select();
 
-
-    document.execCommand(
-        "copy"
-    );
-
+    document.execCommand("copy");
 
     textArea.remove();
 
-
-    showCopiedMessage();
+    showCopySuccess();
 
 }
 
 
 // ========================================
-// COPY MESSAGE
+// COPY SUCCESS MESSAGE
 // ========================================
 
-function showCopiedMessage() {
+function showCopySuccess() {
 
-    if (!copyDiscordButton) {
+    if (!copyButton) {
         return;
     }
 
-
-    copyDiscordButton.textContent =
+    copyButton.textContent =
         "Copied!";
-
 
     if (copyMessage) {
 
@@ -330,25 +272,19 @@ function showCopiedMessage() {
 
     }
 
+    setTimeout(function () {
 
-    setTimeout(
-        () => {
+        copyButton.textContent =
+            "Copy Discord Username";
 
-            copyDiscordButton.textContent =
-                "Copy Username";
+        if (copyMessage) {
 
+            copyMessage.style.display =
+                "none";
 
-            if (copyMessage) {
+        }
 
-                copyMessage.style.display =
-                    "none";
-
-            }
-
-        },
-
-        2200
-    );
+    }, 2200);
 
 }
 
@@ -359,127 +295,123 @@ function showCopiedMessage() {
 
 const revealElements =
     document.querySelectorAll(
-        `
-        .main-about-card,
-        .info-card,
-        .vantacrest-card,
-        .skill-card,
-        .contact-box
-        `
+        ".about-card, " +
+        ".info-card, " +
+        ".vantacrest-main-card, " +
+        ".feature-card, " +
+        ".founder-section, " +
+        ".skill-card, " +
+        ".project-card, " +
+        ".contact-box"
     );
 
 
-revealElements.forEach(
-    element => {
+revealElements.forEach(function (element) {
 
-        element.style.opacity =
-            "0";
+    element.style.opacity =
+        "0";
 
+    element.style.transform =
+        "translateY(30px)";
 
-        element.style.transform =
-            "translateY(35px)";
+    element.style.transition =
+        "opacity 0.7s ease, transform 0.7s ease";
 
-
-        element.style.transition =
-            `
-            opacity 0.7s ease,
-            transform 0.7s ease
-            `;
-
-    }
-);
+});
 
 
-// ========================================
-// REVEAL OBSERVER
-// ========================================
+if ("IntersectionObserver" in window) {
 
-const revealObserver =
-    new IntersectionObserver(
+    const revealObserver =
+        new IntersectionObserver(
 
-        entries => {
+            function (entries) {
 
-            entries.forEach(
-                entry => {
+                entries.forEach(
+                    function (entry) {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                        entry.target.style.opacity =
-                            "1";
+                            entry.target.style.opacity =
+                                "1";
 
+                            entry.target.style.transform =
+                                "translateY(0)";
 
-                        entry.target.style.transform =
-                            "translateY(0)";
+                            revealObserver.unobserve(
+                                entry.target
+                            );
 
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
+                        }
 
                     }
+                );
 
-                }
-            );
+            },
 
-        },
+            {
+                threshold: 0.10
+            }
 
-        {
-            threshold: 0.12
-        }
-
-    );
-
-
-revealElements.forEach(
-    element => {
-
-        revealObserver.observe(
-            element
         );
 
-    }
-);
+
+    revealElements.forEach(
+        function (element) {
+
+            revealObserver.observe(
+                element
+            );
+
+        }
+    );
+
+} else {
+
+    revealElements.forEach(
+        function (element) {
+
+            element.style.opacity =
+                "1";
+
+            element.style.transform =
+                "translateY(0)";
+
+        }
+    );
+
+}
 
 
 // ========================================
-// HERO ENTRANCE
+// HERO ANIMATION
 // ========================================
 
 const heroContent =
-    document.querySelector(
-        ".hero-content"
-    );
-
+    document.querySelector(".hero-content");
 
 if (heroContent) {
 
     heroContent.style.opacity =
         "0";
 
-
     heroContent.style.transform =
         "translateY(25px)";
 
-
     window.addEventListener(
         "load",
-        () => {
+        function () {
 
             setTimeout(
-                () => {
+                function () {
 
                     heroContent.style.transition =
-                        `
-                        opacity 0.9s ease,
-                        transform 0.9s ease
-                        `;
-
+                        "opacity 0.9s ease, transform 0.9s ease";
 
                     heroContent.style.opacity =
                         "1";
-
 
                     heroContent.style.transform =
                         "translateY(0)";
@@ -496,102 +428,34 @@ if (heroContent) {
 
 
 // ========================================
-// INFO CARD STAGGER
+// VANTACREST LOGO HOVER
 // ========================================
 
-const infoCards =
-    document.querySelectorAll(
-        ".info-card"
-    );
+const vantacrestLogo =
+    document.querySelector(".vantacrest-logo");
 
+if (vantacrestLogo) {
 
-infoCards.forEach(
-    (card, index) => {
-
-        card.style.transitionDelay =
-            `${index * 0.05}s`;
-
-    }
-);
-
-
-// ========================================
-// SKILL CARD GLOW
-// ========================================
-
-const skillCards =
-    document.querySelectorAll(
-        ".skill-card"
-    );
-
-
-skillCards.forEach(
-    card => {
-
-        card.addEventListener(
-            "mouseenter",
-            () => {
-
-                card.style.boxShadow =
-                    `
-                    0 22px 55px
-                    rgba(139, 92, 246, 0.15)
-                    `;
-
-            }
-        );
-
-
-        card.addEventListener(
-            "mouseleave",
-            () => {
-
-                card.style.boxShadow =
-                    "";
-
-            }
-        );
-
-    }
-);
-
-
-// ========================================
-// VANTACREST SYMBOL EFFECT
-// ========================================
-
-const vantacrestSymbol =
-    document.querySelector(
-        ".vantacrest-symbol"
-    );
-
-
-if (vantacrestSymbol) {
-
-    vantacrestSymbol.addEventListener(
+    vantacrestLogo.addEventListener(
         "mouseenter",
-        () => {
+        function () {
 
-            vantacrestSymbol.style.transform =
+            vantacrestLogo.style.transform =
                 "rotate(0deg) scale(1.05)";
 
         }
     );
 
 
-    vantacrestSymbol.addEventListener(
+    vantacrestLogo.addEventListener(
         "mouseleave",
-        () => {
+        function () {
 
-            vantacrestSymbol.style.transform =
+            vantacrestLogo.style.transform =
                 "rotate(6deg) scale(1)";
 
         }
     );
-
-
-    vantacrestSymbol.style.transition =
-        "transform 0.25s ease";
 
 }
 
@@ -601,28 +465,9 @@ if (vantacrestSymbol) {
 // ========================================
 
 console.log(
-    "%cpurpleknightasa",
-    `
-    color: #a78bfa;
-    font-size: 22px;
-    font-weight: bold;
-    `
+    "PurpleKnightASA website loaded successfully."
 );
 
-
 console.log(
-    "%cFounder of Vantacrest SMP",
-    `
-    color: #c4b5fd;
-    font-size: 14px;
-    `
-);
-
-
-console.log(
-    "%cWebsite loaded successfully.",
-    `
-    color: white;
-    font-size: 12px;
-    `
+    "Founder of Vantacrest SMP"
 );
